@@ -1,0 +1,18 @@
+run:
+  timeout: 2m
+linters:
+  enable:
+    - gofumpt
+    - goimports
+    - revive
+linters-settings:
+  errcheck:
+    exclude-functions:
+      # Never check for logger errors.
+      - (github.com/go-kit/log.Logger).Log
+      # Used in HTTP handlers, any error is handled by the server itself.
+      - (net/http.ResponseWriter).Write
+  gofumpt:
+    extra-rules: true
+  goimports:
+    local-prefixes: github.com/maxbrunet/prometheus-elasticache-sd

@@ -1,0 +1,165 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  CGO_ENABLED: '0'
+  IMAGE_NAME: ghcr.io/maxbrunet/prometheus-elasticache-sd
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+        with:
+          fetch-depth: 2
+
+      - name: Set up Go
+        uses: actions/setup-go@424fc82d43fa5a37540bae62709ddcc23d9520d4 # renovate: tag=v2.1.5
+        with:
+          # renovate: datasource=docker depName=golang
+          go-version: 1.17.6
+
+      - name: Set up Go mod cache
+        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed # renovate: tag=v2.1.7
+        with:
+          path: ~/go/pkg/mod
+          key: gomod-${{ hashFiles('**/go.sum') }}
+
+      - name: Test
+        run: go test -v ./...
+
+  lint:
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+        with:
+          fetch-depth: 2
+
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@5c56cd6c9dc07901af25baab6f2b0d9f3b7c3018 # renovate: tag=v2.5.2
+        with:
+          # renovate: datasource=go depName=github.com/golangci/golangci-lint
+          version: v1.43.0
+
+  codeql-analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+        with:
+          fetch-depth: 2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@5f532563584d71fdef14ee64d17bafb34f751ce5 # renovate: tag=v1.0.26
+        with:
+          languages: go
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@5f532563584d71fdef14ee64d17bafb34f751ce5 # renovate: tag=v1.0.26
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@5f532563584d71fdef14ee64d17bafb34f751ce5 # renovate: tag=v1.0.26
+
+  build:
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+        with:
+          fetch-depth: 2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@94ab11c41e45d028884a99163086648e898eed25 # renovate: tag=v1.6.0
+
+      - name: Build container images
+        uses: docker/build-push-action@a66e35b9cbcf4ad0ea91ffcaf7bbad63ad9e0229 # renovate: tag=v2.7.0
+        with:
+          context: .
+          tags: ${{ env.IMAGE_NAME }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  semantic-release:
+    needs: [codeql-analyze, build, lint, test]
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      packages: write
+      pull-requests: write
+
+    timeout-minutes: 10
+
+    steps:
+      # full checkout for semantic-release
+      - name: Checkout repository
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+        with:
+          fetch-depth: 0
+          # Use Deploy key with write access to push changelog to main branch (protected branch)
+          ssh-key: ${{ secrets.SEMANTIC_RELEASE_SSH_KEY }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@94ab11c41e45d028884a99163086648e898eed25 # renovate: tag=v1.6.0
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@42d299face0c5c43a0487c477f595ac9cf22f1a7 # renovate: tag=v1.12.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@5982a02995853159735cb838992248c4f0f16166 # renovate: tag=v2.7.0
+        id: semantic-release
+        with:
+          # renovate: datasource=npm depName=semantic-release
+          semantic_version: 18.0.1
+          extra_plugins: |
+            conventional-changelog-conventionalcommits@4.6.3
+            @semantic-release/changelog@6.0.0
+            @semantic-release/git@10.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # We rebuild from the release commit, so promu has the correct Git metadata from the Git tag
+      - name: Build and push container images
+        if: ${{ steps.semantic-release.outputs.new_release_published == 'true' }}
+        uses: docker/build-push-action@a66e35b9cbcf4ad0ea91ffcaf7bbad63ad9e0229 # renovate: tag=v2.7.0
+        with:
+          # Use Path context, otherwise `.git` directory is not available for promu
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:v${{ steps.semantic-release.outputs.new_release_version }}
+            ${{ env.IMAGE_NAME }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
