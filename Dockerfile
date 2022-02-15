@@ -19,7 +19,7 @@ RUN go mod download
 COPY . .
 RUN --mount=type=cache,target=/root/.cache/go-build promu build --verbose
 
-FROM quay.io/prometheus/busybox@sha256:2548dd93c438f7cf8b68dc2ff140189d9bcdae7130d3941524becc31573ec9e3
+FROM quay.io/prometheus/busybox@sha256:a29e40943fc35e4a0ee9c9c039b10580119b1a7299f1e3ce2fd3fe7cb4c8913c
 
 COPY --from=build /go/src/app/prometheus-elasticache-sd /bin/prometheus-elasticache-sd
 
