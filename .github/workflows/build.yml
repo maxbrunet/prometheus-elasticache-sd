@@ -55,7 +55,7 @@ jobs:
           fetch-depth: 2
 
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@5c56cd6c9dc07901af25baab6f2b0d9f3b7c3018 # renovate: tag=v2.5.2
+        uses: golangci/golangci-lint-action@c675eb70db3aa26b496bc4e64da320480338d41b # tag=v3.0.0
         with:
           # renovate: datasource=go depName=github.com/golangci/golangci-lint
           version: v1.44.2
