@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.10](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.9...v1.0.10) (2022-03-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v3 ([#34](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/34)) ([ae92ba5](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ae92ba5ca4b0d803a7a6f4d5213c73a2725146a2))
+* **deps:** update cycjimmy/semantic-release-action action to v3 ([#35](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/35)) ([4315eaf](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4315eaf66abe88debd4ee7c3b70ede26d580043f))
+* **deps:** update docker/build-push-action action to v2.10.0 ([#40](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/40)) ([406690f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/406690f737b9b3c13c738eb168c3ab03f53a3a14))
+* **deps:** update github/codeql-action action to v1.1.4 ([#37](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/37)) ([384975a](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/384975a9be9a3ed8cbf8a988de4e19e13836ff32))
+
+
+### Build System
+
+* **deps:** update module github.com/aws/smithy-go to v1.11.1 ([#38](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/38)) ([7b2aeb2](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/7b2aeb241b6d3ff1d080e5b9b7adf15b2fa117ed))
+
 ### [1.0.9](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.8...v1.0.9) (2022-03-04)
 
 
