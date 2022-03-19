@@ -157,6 +157,7 @@ jobs:
         with:
           # Use Path context, otherwise `.git` directory is not available for promu
           context: .
+          platforms: linux/amd64,linux/arm,linux/arm64,linux/ppc64le,linux/s390x
           push: true
           tags: |
             ${{ env.IMAGE_NAME }}:v${{ steps.semantic-release.outputs.new_release_version }}
