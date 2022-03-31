@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.16](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.15...v1.0.16) (2022-03-31)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/cache action to v3.0.1 ([#58](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/58)) ([112b06d](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/112b06d8250cc43ff6aab4fcbd89cc3836a585b1))
+* **deps:** update dependency github.com/golangci/golangci-lint to v1.45.2 ([#45](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/45)) ([f932724](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f932724ccb4a797cb2622ec67c12ac6167862427))
+* **deps:** update github/codeql-action action to v1.1.6 ([#60](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/60)) ([443e0b0](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/443e0b039f98f7effdc491f21e26b16bf9cd4583))
+* **deps:** update golang to 3afd220 ([#57](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/57)) ([6c5d3f0](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6c5d3f0da95e7c8c5c76bbd6debf1ee2017d7921))
+* **deps:** update golang to 65654d6 ([#56](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/56)) ([78c4aa7](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/78c4aa7e6ede97f36ef70e25d03a66366e2f505e))
+* **deps:** update golang to 6fd04df ([#54](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/54)) ([c54dc5e](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c54dc5e969cfbe702d337c28e0724504f4c0cc00))
+* **deps:** update golang to 9ccb0ed ([#50](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/50)) ([db09b69](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/db09b69d95945b5667aae39afba41545dc7079c8))
+* **deps:** update golang to b64a34e ([#52](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/52)) ([e6c7d99](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e6c7d9963dfa77a9972a159309dd5122a9157d11))
+
+
+### Build System
+
+* **deps:** update module github.com/aws/smithy-go to v1.11.2 ([#53](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/53)) ([e4baa73](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e4baa73b4e35c8283ad7e4041704ccbe73e2e59f))
+
 ### [1.0.15](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.14...v1.0.15) (2022-03-21)
 
 
