@@ -13,6 +13,7 @@
     "regexManagers:dockerfileVersions"
   ],
   "assignees": ["maxbrunet"],
+  "internalChecksFilter": "strict",
   "golang": {
     "postUpdateOptions": [
       "gomodTidy",
