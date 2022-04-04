@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.19](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.18...v1.0.19) (2022-04-04)
+
+
+### Build System
+
+* fix container image labels ([#62](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/62)) ([0fb5728](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/0fb5728c32ea23cb02031e43b99ba573640a4150))
+
 ### [1.0.18](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.17...v1.0.18) (2022-04-04)
 
 
