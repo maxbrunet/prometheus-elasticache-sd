@@ -5,11 +5,6 @@ ARG PROMU_VERSION=v0.13.0
 ARG TARGETOS
 ARG TARGETARCH
 
-LABEL \
-  org.opencontainers.image.source="https://github.com/maxbrunet/prometheus-elasticache-sd" \
-  org.opencontainers.image.url="https://github.com/maxbrunet/prometheus-elasticache-sd" \
-  org.opencontainers.image.licenses="Apache-2.0"
-
 WORKDIR /go/src/app
 
 RUN apk add --no-cache git \
@@ -22,6 +17,11 @@ COPY . .
 RUN --mount=type=cache,target=/root/.cache/go-build GOOS="${TARGETOS}" GOARCH="${TARGETARCH}" promu build --verbose
 
 FROM quay.io/prometheus/busybox@sha256:bb097b0c990ff3f84affd8263a101988b8b8a69964e4dca31d9a0903aee8cec3
+
+LABEL \
+  org.opencontainers.image.source="https://github.com/maxbrunet/prometheus-elasticache-sd" \
+  org.opencontainers.image.url="https://github.com/maxbrunet/prometheus-elasticache-sd" \
+  org.opencontainers.image.licenses="Apache-2.0"
 
 COPY --from=build /go/src/app/prometheus-elasticache-sd /bin/prometheus-elasticache-sd
 
