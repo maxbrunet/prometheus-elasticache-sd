@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.22](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.21...v1.0.22) (2022-04-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v3.0.1 ([#71](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/71)) ([ea07b86](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ea07b865fba3e8ee7d6861b2717edaad14a4de39))
+* **deps:** update golang to 42d3567 ([#70](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/70)) ([e6da7e0](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e6da7e08af8566c55e46695471ab5a46d7fb27b5))
+
+
+### Build System
+
+* **deps:** update quay.io/prometheus/busybox digest to b0b369c ([#72](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/72)) ([9422bd9](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9422bd96aee93c87218e97a44f874cc4c9730add))
+
 ### [1.0.21](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.20...v1.0.21) (2022-04-13)
 
 
