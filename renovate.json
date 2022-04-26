@@ -40,11 +40,6 @@
       "groupName": "aws-sdk-go-v2 monorepo"
     },
     {
-      "description": "Disable Prometheus updates: https://github.com/prometheus/prometheus/issues/8852",
-      "matchPackageNames": ["github.com/prometheus/prometheus"],
-      "enabled": false
-    },
-    {
       "matchDepTypes": ["require"],
       "semanticCommitType": "build"
     },
