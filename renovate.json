@@ -40,6 +40,11 @@
       "groupName": "aws-sdk-go-v2 monorepo"
     },
     {
+      "description": "Exclude retracted Prometheus versions: https://github.com/renovatebot/renovate/issues/13012",
+      "matchPackageNames": ["github.com/prometheus/prometheus"],
+      "allowedVersions": "<1"
+    },
+    {
       "matchDepTypes": ["require"],
       "semanticCommitType": "build"
     },
