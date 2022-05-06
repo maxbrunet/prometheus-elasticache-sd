@@ -99,7 +99,7 @@ jobs:
         uses: docker/setup-buildx-action@dc7b9719a96d48369863986a06765841d7ea23f6 # tag=v2.0.0
 
       - name: Build container images
-        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a # tag=v2.10.0
+        uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8 # tag=v3.0.0
         with:
           context: .
           tags: ${{ env.IMAGE_NAME }}:latest
@@ -153,7 +153,7 @@ jobs:
       # We rebuild from the release commit, so promu has the correct Git metadata from the Git tag
       - name: Build and push container images
         if: ${{ steps.semantic-release.outputs.new_release_published == 'true' }}
-        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a # tag=v2.10.0
+        uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8 # tag=v3.0.0
         with:
           # Use Path context, otherwise `.git` directory is not available for promu
           context: .
