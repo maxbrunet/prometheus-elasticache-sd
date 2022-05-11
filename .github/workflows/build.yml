@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-go@f6164bd8c8acb4a71fb2791a8b6c4024ff038dab # tag=v3.0.0
         with:
           # renovate: datasource=docker depName=golang
-          go-version: 1.18.1
+          go-version: 1.18.2
 
       - name: Set up Go mod cache
         uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # tag=v3.0.2
