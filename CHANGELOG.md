@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-### [1.0.34](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.33...v1.0.34) (2022-05-24)
+## [1.0.34](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.33...v1.0.34) (2022-05-24)
 
 
 ### Miscellaneous Chores
@@ -14,14 +14,14 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update aws-sdk-go-v2 monorepo ([#100](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/100)) ([8af8e02](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/8af8e0235d9ce4fdf718875587f96116ad3e214f))
 
-### [1.0.33](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.32...v1.0.33) (2022-05-23)
+## [1.0.33](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.32...v1.0.33) (2022-05-23)
 
 
 ### Build System
 
 * **deps:** update aws-sdk-go-v2 monorepo ([#98](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/98)) ([f3bfa55](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f3bfa556605ea35d98ddee967dea28e2ec3ad8fd))
 
-### [1.0.32](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.31...v1.0.32) (2022-05-20)
+## [1.0.32](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.31...v1.0.32) (2022-05-20)
 
 
 ### Miscellaneous Chores
@@ -34,14 +34,14 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/prometheus/client_golang to v1.12.2 ([#97](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/97)) ([928fd73](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/928fd731fdeb44903e7b9ec46b75ee29d40f5550))
 
-### [1.0.31](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.30...v1.0.31) (2022-05-16)
+## [1.0.31](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.30...v1.0.31) (2022-05-16)
 
 
 ### Build System
 
 * **deps:** update module github.com/aws/aws-sdk-go-v2/config to v1.15.5 ([#94](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/94)) ([295e5d7](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/295e5d7b04b3b2365a22758dd7e3625c8c8a8a1f))
 
-### [1.0.30](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.29...v1.0.30) (2022-05-15)
+## [1.0.30](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.29...v1.0.30) (2022-05-15)
 
 
 ### Miscellaneous Chores
@@ -53,7 +53,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update quay.io/prometheus/busybox digest to a91bcb2 ([#93](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/93)) ([11e102e](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/11e102ec1fe6561ac4dd28a862c24652fb2f61b5))
 
-### [1.0.29](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.28...v1.0.29) (2022-05-14)
+## [1.0.29](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.28...v1.0.29) (2022-05-14)
 
 
 ### Miscellaneous Chores
@@ -67,7 +67,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/go-kit/log to v0.2.1 ([#91](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/91)) ([28682af](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/28682af19a39934d1a5dfda9d1819c9a6a12f3ce))
 
-### [1.0.28](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.27...v1.0.28) (2022-05-11)
+## [1.0.28](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.27...v1.0.28) (2022-05-11)
 
 
 ### Miscellaneous Chores
@@ -82,21 +82,21 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update golang to v1.18.2 ([#87](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/87)) ([722d52f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/722d52f7364e715b70348cd0e23982614ec80ff1))
 
-### [1.0.27](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.26...v1.0.27) (2022-05-06)
+## [1.0.27](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.26...v1.0.27) (2022-05-06)
 
 
 ### Build System
 
 * **deps:** update quay.io/prometheus/busybox digest to 7e581cd ([#85](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/85)) ([84cd3ea](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/84cd3eadfbd72daf43c90028de46a5523c006587))
 
-### [1.0.26](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.25...v1.0.26) (2022-05-03)
+## [1.0.26](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.25...v1.0.26) (2022-05-03)
 
 
 ### Build System
 
 * **deps:** update aws-sdk-go-v2 monorepo ([#81](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/81)) ([4599895](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4599895f6778074f959c5955fdaa8e5297cb6e4e))
 
-### [1.0.25](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.24...v1.0.25) (2022-04-28)
+## [1.0.25](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.24...v1.0.25) (2022-04-28)
 
 
 ### Miscellaneous Chores
@@ -109,7 +109,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/aws/aws-sdk-go-v2/service/elasticache to v1.20.5 ([#80](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/80)) ([7d55c0b](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/7d55c0ba33d5501ef9a3efb7045591cce345b630))
 
-### [1.0.24](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.23...v1.0.24) (2022-04-26)
+## [1.0.24](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.23...v1.0.24) (2022-04-26)
 
 
 ### Miscellaneous Chores
@@ -121,7 +121,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/prometheus/prometheus to v0.35.0 ([#77](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/77)) ([bb19700](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/bb19700f2b22439ab0fab2a4149102722d4be148))
 
-### [1.0.23](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.22...v1.0.23) (2022-04-26)
+## [1.0.23](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.22...v1.0.23) (2022-04-26)
 
 
 ### Miscellaneous Chores
@@ -133,7 +133,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/prometheus/common to v0.34.0 ([#74](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/74)) ([e8f6780](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e8f6780db13d4da3e893249be238fefd9119d98c))
 
-### [1.0.22](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.21...v1.0.22) (2022-04-15)
+## [1.0.22](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.21...v1.0.22) (2022-04-15)
 
 
 ### Miscellaneous Chores
@@ -146,7 +146,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update quay.io/prometheus/busybox digest to b0b369c ([#72](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/72)) ([9422bd9](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9422bd96aee93c87218e97a44f874cc4c9730add))
 
-### [1.0.21](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.20...v1.0.21) (2022-04-13)
+## [1.0.21](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.20...v1.0.21) (2022-04-13)
 
 
 ### Miscellaneous Chores
@@ -159,7 +159,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update golang to v1.18.1 ([#69](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/69)) ([be45b2c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/be45b2cc578cd6c2fbfe116103cae826a0d97fb2))
 
-### [1.0.20](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.19...v1.0.20) (2022-04-06)
+## [1.0.20](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.19...v1.0.20) (2022-04-06)
 
 
 ### Miscellaneous Chores
@@ -172,21 +172,21 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update aws-sdk-go-v2 monorepo ([#65](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/65)) ([3a29b90](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/3a29b905cc6600afdbbbe6a647b8f7d9033c6d34))
 
-### [1.0.19](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.18...v1.0.19) (2022-04-04)
+## [1.0.19](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.18...v1.0.19) (2022-04-04)
 
 
 ### Build System
 
 * fix container image labels ([#62](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/62)) ([0fb5728](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/0fb5728c32ea23cb02031e43b99ba573640a4150))
 
-### [1.0.18](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.17...v1.0.18) (2022-04-04)
+## [1.0.18](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.17...v1.0.18) (2022-04-04)
 
 
 ### Build System
 
 * **deps:** update module github.com/prometheus/common to v0.33.0 ([#55](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/55)) ([0ac7e0c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/0ac7e0c368a3f2305bd3c96f8c575d4deeb6eb06))
 
-### [1.0.17](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.16...v1.0.17) (2022-03-31)
+## [1.0.17](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.16...v1.0.17) (2022-03-31)
 
 
 ### Miscellaneous Chores
@@ -199,7 +199,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update aws-sdk-go-v2 monorepo ([#51](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/51)) ([f34f7e5](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f34f7e5c70e7feba4076a6ec47ebe298a7aaf1d5))
 
-### [1.0.16](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.15...v1.0.16) (2022-03-31)
+## [1.0.16](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.15...v1.0.16) (2022-03-31)
 
 
 ### Miscellaneous Chores
@@ -218,7 +218,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/aws/smithy-go to v1.11.2 ([#53](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/53)) ([e4baa73](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e4baa73b4e35c8283ad7e4041704ccbe73e2e59f))
 
-### [1.0.15](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.14...v1.0.15) (2022-03-21)
+## [1.0.15](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.14...v1.0.15) (2022-03-21)
 
 
 ### Miscellaneous Chores
@@ -230,14 +230,14 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update aws-sdk-go-v2 monorepo ([#39](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/39)) ([e28905f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e28905f806fdc60ce76801f06e3c4842258db76a))
 
-### [1.0.14](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.13...v1.0.14) (2022-03-19)
+## [1.0.14](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.13...v1.0.14) (2022-03-19)
 
 
 ### Build System
 
 * fix multi-arch build ([#48](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/48)) ([7219ada](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/7219adab2b062979357099369f43943a670324e5))
 
-### [1.0.13](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.12...v1.0.13) (2022-03-19)
+## [1.0.13](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.12...v1.0.13) (2022-03-19)
 
 
 ### Miscellaneous Chores
@@ -250,7 +250,7 @@ All notable changes to this project will be documented in this file.
 
 * enable multi-arch build ([#47](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/47)) ([d553ede](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/d553edebc3051d374c206f94063c7be681875dee))
 
-### [1.0.12](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.11...v1.0.12) (2022-03-16)
+## [1.0.12](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.11...v1.0.12) (2022-03-16)
 
 
 ### Miscellaneous Chores
@@ -262,14 +262,14 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update golang ([#43](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/43)) ([c8491ce](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c8491ce4c929c131cd4bf171e9733c782d7b3787))
 
-### [1.0.11](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.10...v1.0.11) (2022-03-15)
+## [1.0.11](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.10...v1.0.11) (2022-03-15)
 
 
 ### Build System
 
 * **deps:** update quay.io/prometheus/busybox digest to bb097b0 ([#41](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/41)) ([3485410](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/348541064f96285c531c3f4dcc46c847e60e0d13))
 
-### [1.0.10](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.9...v1.0.10) (2022-03-15)
+## [1.0.10](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.9...v1.0.10) (2022-03-15)
 
 
 ### Miscellaneous Chores
@@ -284,21 +284,21 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/aws/smithy-go to v1.11.1 ([#38](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/38)) ([7b2aeb2](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/7b2aeb241b6d3ff1d080e5b9b7adf15b2fa117ed))
 
-### [1.0.9](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.8...v1.0.9) (2022-03-04)
+## [1.0.9](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.8...v1.0.9) (2022-03-04)
 
 
 ### Build System
 
 * **deps:** update golang to v1.17.8 ([#36](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/36)) ([449d668](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/449d668f9d901595dc25b24522b41987e2d56719))
 
-### [1.0.8](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.7...v1.0.8) (2022-03-04)
+## [1.0.8](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.7...v1.0.8) (2022-03-04)
 
 
 ### Build System
 
 * **deps:** update aws-sdk-go-v2 monorepo ([#29](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/29)) ([9f8e316](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9f8e3167ef0940cb890c3dee949dd2be12960912))
 
-### [1.0.7](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.6...v1.0.7) (2022-03-03)
+## [1.0.7](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.6...v1.0.7) (2022-03-03)
 
 
 ### Miscellaneous Chores
@@ -320,7 +320,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/aws/smithy-go to v1.11.0 ([#27](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/27)) ([680967f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/680967fb7c84bb32f82f1b30b5bc89bf8e1d192d))
 
-### [1.0.6](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.5...v1.0.6) (2022-02-15)
+## [1.0.6](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.5...v1.0.6) (2022-02-15)
 
 
 ### Miscellaneous Chores
@@ -332,7 +332,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update quay.io/prometheus/busybox commit hash to a29e409 ([#19](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/19)) ([6f66ffd](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6f66ffdbf28d53974e5dc324534150ab6a474038))
 
-### [1.0.5](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.4...v1.0.5) (2022-02-11)
+## [1.0.5](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.4...v1.0.5) (2022-02-11)
 
 
 ### Miscellaneous Chores
@@ -345,7 +345,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update golang to v1.17.7 ([#17](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/17)) ([e55b533](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e55b5338ceb1f65b79a75e05fce9c7f6943d524e))
 
-### [1.0.4](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.3...v1.0.4) (2022-02-06)
+## [1.0.4](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.3...v1.0.4) (2022-02-06)
 
 
 ### Miscellaneous Chores
@@ -357,7 +357,7 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/prometheus/client_golang to v1.12.1 ([#8](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/8)) ([11d2133](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/11d213389addcab84d4b64b49e68eade8c71c64c))
 
-### [1.0.3](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.2...v1.0.3) (2022-02-05)
+## [1.0.3](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.2...v1.0.3) (2022-02-05)
 
 
 ### Miscellaneous Chores
@@ -371,14 +371,14 @@ All notable changes to this project will be documented in this file.
 
 * **deps:** update module github.com/aws/aws-sdk-go-v2/config to v1.13.1 ([#12](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/12)) ([f22aca9](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f22aca9e7ef2f5958820a0fdbec6c6f50a5e3e7f))
 
-### [1.0.2](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.1...v1.0.2) (2022-01-22)
+## [1.0.2](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.1...v1.0.2) (2022-01-22)
 
 
 ### Build System
 
 * **deps:** update aws-sdk-go-v2 monorepo ([#4](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/4)) ([274e73a](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/274e73ade9ea09224c64b2b93a5af25cc5908821))
 
-### [1.0.1](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.0...v1.0.1) (2022-01-21)
+## [1.0.1](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.0...v1.0.1) (2022-01-21)
 
 
 ### Miscellaneous Chores
