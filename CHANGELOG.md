@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.37](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.36...v1.0.37) (2022-06-02)
+
+
+### Build System
+
+* **deps:** update golang to v1.18.3 ([#109](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/109)) ([cc81624](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/cc8162450fbce5d11ddb0240bcd1e609dac82031))
+
 ## [1.0.36](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.35...v1.0.36) (2022-06-02)
 
 
