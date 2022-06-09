@@ -142,7 +142,7 @@ jobs:
         id: semantic-release
         with:
           # renovate: datasource=npm depName=semantic-release
-          semantic_version: 19.0.2
+          semantic_version: 19.0.3
           extra_plugins: |
             conventional-changelog-conventionalcommits@5.0.0
             @semantic-release/changelog@6.0.0
