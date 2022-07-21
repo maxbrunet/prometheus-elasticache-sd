@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.53](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.52...v1.0.53) (2022-07-21)
+
+
+### Miscellaneous Chores
+
+* **deps:** update docker/build-push-action action to v3.1.0 ([#136](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/136)) ([9f4c673](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9f4c67358d36247e2e870476014987d1d3bd6116))
+* **deps:** update golang to d84b1ff ([#135](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/135)) ([7a0a08e](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/7a0a08ece778cc4e459b7323623fb5d578f0d729))
+
+
+### Build System
+
+* **deps:** update module github.com/prometheus/common to v0.37.0 ([#137](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/137)) ([176d1d3](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/176d1d3528040deadd96b613f0d901a3f6e87f40))
+* **deps:** update module github.com/prometheus/prometheus to v0.37.0 ([#138](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/138)) ([d36d0cc](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/d36d0cc13a5d56c2d542d2213557fdc941c0c64d))
+
 ## [1.0.52](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.51...v1.0.52) (2022-07-19)
 
 
