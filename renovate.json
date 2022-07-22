@@ -14,6 +14,7 @@
   ],
   "assignees": ["maxbrunet"],
   "internalChecksFilter": "strict",
+  "platformAutomerge": true,
   "golang": {
     "postUpdateOptions": [
       "gomodTidy",
@@ -62,7 +63,7 @@
     {
       "description": "Update version keys in YAML files",
       "fileMatch": ["(^|/).*.ya?ml$"],
-      "matchStrings": ["# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: lookupName=(?<lookupName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?\\s*[\\w-_]*version: (?<currentValue>.*?)\\s"]
+      "matchStrings": ["# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?\\s*[\\w-_]*version: (?<currentValue>.*?)\\s"]
     },
     {
       "description": "Update Golang in go.mod file",
@@ -74,7 +75,7 @@
     {
       "description": "Update semantic-release plugins",
       "fileMatch": ["^\\.github/workflows/build\\.yml$"],
-      "matchStrings": ["\\s{12}(?<depName>\\S+?)@(?<currentValue>.+?)\\s+"],
+      "matchStrings": ["\\s{12}(?<depName>\\S+?)@(?<currentValue>.+?)\\s"],
       "datasourceTemplate": "npm"
     }
   ]
