@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.54](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.53...v1.0.54) (2022-07-25)
+
+
+### Continuous Integration
+
+* setup go before linting ([#141](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/141)) ([7511397](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/75113970d9f2cbf2524f1b9c7afe1d291294bce4))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @semantic-release/changelog to v6.0.1 ([#140](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/140)) ([cc0ae78](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/cc0ae785e962e77e14e124b203bc8cd404aac521))
+* **deps:** update dependency github.com/golangci/golangci-lint to v1.47.0 ([#142](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/142)) ([43e9e31](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/43e9e31b8421bdcbb2ffb9dbe6a3027a20be4aad))
+* **renovate:** enable platformAutomerge ([#139](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/139)) ([38e8490](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/38e8490806e9a9fd975d82e73d8868e4c253e066))
+
+
+### Build System
+
+* **deps:** update module github.com/aws/aws-sdk-go-v2/service/elasticache to v1.22.0 ([#143](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/143)) ([800a4d3](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/800a4d3d6395f2f3feb7c0679150ff65d01262a2))
+
 ## [1.0.53](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.52...v1.0.53) (2022-07-21)
 
 
