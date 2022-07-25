@@ -55,8 +55,8 @@ github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.4.8 h1:2J+jdlBJWEmTyAwC82Y
 github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.4.8/go.mod h1:ZIV8GYoC6WLBW5KGs+o4rsc65/ozd+eQ0L31XF5VDwk=
 github.com/aws/aws-sdk-go-v2/internal/ini v1.3.15 h1:QquxR7NH3ULBsKC+NoTpilzbKKS+5AELfNREInbhvas=
 github.com/aws/aws-sdk-go-v2/internal/ini v1.3.15/go.mod h1:Tkrthp/0sNBShQQsamR7j/zY4p19tVTAs+nnqhH6R3c=
-github.com/aws/aws-sdk-go-v2/service/elasticache v1.21.3 h1:rSNVHta1A3IW6rkgbmbkP3qJ5Vf9oKcHeaf9CV53r9w=
-github.com/aws/aws-sdk-go-v2/service/elasticache v1.21.3/go.mod h1:pOgs/FgJKLk9UzOV22TvCbaCpWT+IOg7OAi2tEJYwLo=
+github.com/aws/aws-sdk-go-v2/service/elasticache v1.22.0 h1:6YCx0vgSZnAn62IjKWLUHcCJzH0Vhx0FuTEqCPoc7B0=
+github.com/aws/aws-sdk-go-v2/service/elasticache v1.22.0/go.mod h1:pOgs/FgJKLk9UzOV22TvCbaCpWT+IOg7OAi2tEJYwLo=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.9.8 h1:oKnAXxSF2FUvfgw8uzU/v9OTYorJJZ8eBmWhr9TWVVQ=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.9.8/go.mod h1:rDVhIMAX9N2r8nWxDUlbubvvaFMnfsm+3jAV7q+rpM4=
 github.com/aws/aws-sdk-go-v2/service/sso v1.11.12 h1:760bUnTX/+d693FT6T6Oa7PZHfEQT9XMFZeM5IQIB0A=
