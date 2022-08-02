@@ -1,4 +1,4 @@
-FROM --platform="${BUILDPLATFORM}" golang:1.18.5-alpine@sha256:dda10a0c69473a595ab11ed3f8305bf4d38e0436b80e1462fb22c9d8a1c1e808 AS build
+FROM --platform="${BUILDPLATFORM}" golang:1.19.0-alpine@sha256:d558fcc2736e6c611a7659c110cda036a2fd093d87e91d2dfee9479aec404193 AS build
 
 # renovate: datasource=go depName=github.com/prometheus/promu
 ARG PROMU_VERSION=v0.13.0
