@@ -28,11 +28,11 @@
       "stabilityDays": 7
     },
     {
-      "description": "Rename golang docker tag to Golang",
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["golang"],
-      "matchPackagePatterns": ["/golang$"],
-      "commitMessageTopic": "Golang"
+      "description": "Group Go updates",
+      "matchDatasources": ["docker", "golang-version"],
+      "matchPackageNames": ["go", "golang"],
+      "commitMessageTopic": "Go",
+      "groupName": "go"
     },
     {
       "description": "Group packages from aws-sdk-go-v2 monorepo together",
@@ -50,7 +50,7 @@
       "semanticCommitType": "build"
     },
     {
-      "matchPackageNames": ["golang"],
+      "matchPackageNames": ["go"],
       "matchUpdateTypes": ["patch", "minor", "major"],
       "semanticCommitType": "build"
     },
@@ -66,11 +66,11 @@
       "matchStrings": ["# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?\\s*[\\w-_]*version: (?<currentValue>.*?)\\s"]
     },
     {
-      "description": "Update Golang in go.mod file",
-      "fileMatch": ["^go.mod$"],
-      "matchStrings": ["\\sgo (?<currentValue>.*?)\\s"],
-      "depNameTemplate": "golang",
-      "datasourceTemplate": "docker"
+      "description": "Update Golang in .go-version file",
+      "fileMatch": ["(^|/)\\.go-version$"],
+      "matchStrings": ["^\\s*(?<currentValue>.+?)\\s*$"],
+      "depNameTemplate": "go",
+      "datasourceTemplate": "golang-version"
     },
     {
       "description": "Update semantic-release plugins",
