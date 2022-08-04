@@ -1,6 +1,8 @@
 # Prometheus AWS ElastiCache Service Discovery
 
+[![release](https://img.shields.io/github/v/release/maxbrunet/prometheus-elasticache-sd?sort=semver)](https://github.com/maxbrunet/prometheus-elasticache-sd/releases)
 [![build](https://github.com/maxbrunet/prometheus-elasticache-sd/actions/workflows/build.yml/badge.svg)](https://github.com/maxbrunet/prometheus-elasticache-sd/actions/workflows/build.yml)
+[![go report](https://goreportcard.com/badge/github.com/maxbrunet/prometheus-elasticache-sd)](https://goreportcard.com/report/github.com/maxbrunet/prometheus-elasticache-sd)
 
 ElastiCache SD allows retrieving scrape targets from [AWS ElastiCache](https://aws.amazon.com/elasticache/) cache nodes for [Prometheus](https://prometheus.io/). **No address is defined by default**, it must be configured with relabeling and requires a [third-party exporter](https://prometheus.io/docs/instrumenting/exporters/#third-party-exporters) supporting the [multi-target pattern](https://prometheus.io/docs/guides/multi-target-exporter/).
 
