@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.56](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.55...v1.0.56) (2022-08-08)
+
+
+### Documentation
+
+* **readme:** add badges ([#155](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/155)) ([fd23445](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/fd23445edb316cdbc9b217c315a1d7ca471f1332))
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/cache action to v3.0.6 ([#157](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/157)) ([b439786](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b4397867383d815cac751334ab0fa174702f85f5))
+* **deps:** update cycjimmy/semantic-release-action action to v3.1.0 ([#156](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/156)) ([feab231](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/feab231ce8cad80468d69728be6d5d9b2dadefce))
+* **deps:** update dependency github.com/golangci/golangci-lint to v1.47.3 ([#159](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/159)) ([8bbbbfb](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/8bbbbfba8f80ef27b0ab343e08a37d0444e50483))
+* **deps:** update docker/build-push-action action to v3.1.1 ([#158](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/158)) ([b477ef7](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b477ef78def5e3d29366d581321b0cfc24194ae1))
+* **deps:** update github/codeql-action action to v2.1.18 ([#154](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/154)) ([63a70d3](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/63a70d3b1d603ed9d65c3a83461d83d0b1c963b8))
+* **renovate:** use golang-version datasource ([#151](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/151)) ([1eb928c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/1eb928ce7a325d6bb7bfca139e65cec4fbe94ef0))
+
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#160](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/160)) ([4cb46a2](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4cb46a2591b783ad24d1eb32aa1c3c3b30b4ed2f))
+
 ## [1.0.55](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.54...v1.0.55) (2022-08-01)
 
 
