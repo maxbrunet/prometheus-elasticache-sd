@@ -68,7 +68,7 @@ jobs:
         uses: golangci/golangci-lint-action@537aa1903e5d359d0b27dbc19ddd22c5087f3fbc # tag=v3.2.0
         with:
           # renovate: datasource=go depName=github.com/golangci/golangci-lint
-          version: v1.47.3
+          version: v1.48.0
 
   codeql-analyze:
     runs-on: ubuntu-latest
