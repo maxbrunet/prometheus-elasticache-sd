@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.59](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.58...v1.0.59) (2022-08-15)
+
+
+### Build System
+
+* **deps:** update quay.io/prometheus/busybox docker digest to 742b69f ([#164](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/164)) ([07f3422](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/07f34229243eb1a9f5b9e8be9130cadd66d748d9))
+
 ## [1.0.58](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.57...v1.0.58) (2022-08-12)
 
 
