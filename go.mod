@@ -4,9 +4,9 @@ go 1.19
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.16.13
-	github.com/aws/aws-sdk-go-v2/config v1.17.2
+	github.com/aws/aws-sdk-go-v2/config v1.17.3
 	github.com/aws/aws-sdk-go-v2/credentials v1.12.17
-	github.com/aws/aws-sdk-go-v2/service/elasticache v1.22.5
+	github.com/aws/aws-sdk-go-v2/service/elasticache v1.22.6
 	github.com/aws/aws-sdk-go-v2/service/sts v1.16.16
 	github.com/aws/smithy-go v1.13.1
 	github.com/go-kit/log v0.2.1
