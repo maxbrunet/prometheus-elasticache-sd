@@ -50,7 +50,7 @@
       "semanticCommitType": "build"
     },
     {
-      "matchPackageNames": ["go"],
+      "matchPackageNames": ["go", "golang"],
       "matchUpdateTypes": ["patch", "minor", "major"],
       "semanticCommitType": "build"
     },
