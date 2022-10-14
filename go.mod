@@ -14,7 +14,7 @@ require (
 	github.com/prometheus/client_golang v1.13.0
 	github.com/prometheus/common v0.37.0
 	github.com/prometheus/exporter-toolkit v0.7.1
-	github.com/prometheus/prometheus v0.39.0
+	github.com/prometheus/prometheus v0.39.1
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
 
