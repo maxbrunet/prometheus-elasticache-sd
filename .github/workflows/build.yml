@@ -65,7 +65,7 @@ jobs:
           key: gomod-${{ hashFiles('**/go.sum') }}
 
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@537aa1903e5d359d0b27dbc19ddd22c5087f3fbc # tag=v3.2.0
+        uses: golangci/golangci-lint-action@07db5389c99593f11ad7b44463c2d4233066a9b1 # tag=v3.3.0
         with:
           # renovate: datasource=go depName=github.com/golangci/golangci-lint
           version: v1.50.0
