@@ -269,8 +269,7 @@ func main() {
 		ecShowCacheClustersNotInReplicationGroups = kingpin.Flag("elasticache.show-cache-clusters-not-in-replication-groups", "An optional flag that can be included in the DescribeCacheCluster request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this means single node Redis clusters.").Bool()
 		targetRefreshInterval                     = kingpin.Flag("target.refresh-interval", "Refresh interval to re-read the cluster list.").Default("60s").Duration()
 		outputFile                                = kingpin.Flag("output.file", "The output filename for file_sd compatible file.").Default("elasticache.json").String()
-		webConfig                                 = webflag.AddFlags(kingpin.CommandLine)
-		listenAddress                             = kingpin.Flag("web.listen-address", "Address to listen on for web interface and telemetry.").Default(":8888").String()
+		webConfig                                 = webflag.AddFlags(kingpin.CommandLine, ":8888")
 		metricsPath                               = kingpin.Flag("web.telemetry-path", "Path under which to expose metrics.").Default("/metrics").String()
 	)
 
@@ -303,7 +302,6 @@ func main() {
 
 	prometheus.MustRegister(version.NewCollector("prometheus_elasticache_sd"))
 
-	level.Info(logger).Log("msg", "Listening on address", "address", *listenAddress)
 	http.Handle(*metricsPath, promhttp.Handler())
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(`<html>
@@ -315,9 +313,9 @@ func main() {
              </html>`))
 	})
 
-	srv := &http.Server{Addr: *listenAddress}
+	srv := &http.Server{}
 
-	if err := web.ListenAndServe(srv, *webConfig, logger); err != nil {
+	if err := web.ListenAndServe(srv, webConfig, logger); err != nil {
 		level.Error(logger).Log("msg", "Error starting HTTP server", "err", err)
 		os.Exit(1)
 	}
