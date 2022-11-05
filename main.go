@@ -15,6 +15,7 @@ package main
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"net/http"
 	"os"
@@ -30,7 +31,6 @@ import (
 	"github.com/aws/smithy-go"
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
-	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/common/model"
@@ -127,7 +127,7 @@ func (d *ElasticacheDiscovery) elasticacheClient(ctx context.Context) (*elastica
 
 	cfg, err := config.LoadDefaultConfig(ctx, optFns...)
 	if err != nil {
-		return nil, errors.Wrap(err, "could not load aws default config")
+		return nil, fmt.Errorf("could not load aws default config: %w", err)
 	}
 
 	if d.cfg.RoleARN != "" {
@@ -163,11 +163,11 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 		o, err := p.NextPage(ctx)
 		if err != nil {
 			var apiErr smithy.APIError
-			if ok := errors.As(err, &apiErr); ok && (apiErr.ErrorCode() == "AuthFailure" || apiErr.ErrorCode() == "UnauthorizedOperation") {
+			if errors.As(err, &apiErr) && (apiErr.ErrorCode() == "AuthFailure" || apiErr.ErrorCode() == "UnauthorizedOperation") {
 				d.elasticache = nil
 			}
 
-			return nil, errors.Wrap(err, "could not describe cache clusters")
+			return nil, fmt.Errorf("could not describe cache clusters: %w", err)
 		}
 
 		for _, cc := range o.CacheClusters {
