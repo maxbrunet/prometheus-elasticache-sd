@@ -13,7 +13,7 @@ require (
 	github.com/prometheus/client_golang v1.13.1
 	github.com/prometheus/common v0.37.0
 	github.com/prometheus/exporter-toolkit v0.8.1
-	github.com/prometheus/prometheus v0.39.1
+	github.com/prometheus/prometheus v0.40.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
 
@@ -32,19 +32,19 @@ require (
 	github.com/coreos/go-systemd/v22 v22.4.0 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
-	github.com/grafana/regexp v0.0.0-20220304095617-2e8d9baf4ac2 // indirect
+	github.com/grafana/regexp v0.0.0-20221005093135-b4c2bcb0a4b6 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/jpillora/backoff v1.0.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369 // indirect
 	github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f // indirect
-	github.com/prometheus/client_model v0.2.0 // indirect
+	github.com/prometheus/client_model v0.3.0 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
-	golang.org/x/crypto v0.0.0-20221012134737-56aed061732a // indirect
-	golang.org/x/net v0.0.0-20220920203100-d0c6ba3f52d9 // indirect
-	golang.org/x/oauth2 v0.0.0-20220909003341-f21342109be1 // indirect
+	golang.org/x/crypto v0.1.0 // indirect
+	golang.org/x/net v0.1.0 // indirect
+	golang.org/x/oauth2 v0.1.0 // indirect
 	golang.org/x/sync v0.1.0 // indirect
-	golang.org/x/sys v0.0.0-20220919091848-fb04ddd9f9c8 // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/sys v0.1.0 // indirect
+	golang.org/x/text v0.4.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
