@@ -12,7 +12,7 @@ require (
 	github.com/go-kit/log v0.2.1
 	github.com/prometheus/client_golang v1.14.0
 	github.com/prometheus/common v0.37.0
-	github.com/prometheus/exporter-toolkit v0.8.1
+	github.com/prometheus/exporter-toolkit v0.8.2
 	github.com/prometheus/prometheus v0.40.3
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
