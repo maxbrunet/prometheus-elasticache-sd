@@ -214,14 +214,15 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 			}
 
 			for _, cn := range cc.CacheNodes {
-				labels[model.LabelName(ecLabelCacheNodeID)] = model.LabelValue(*cn.CacheNodeId)
-				labels[model.LabelName(ecLabelCacheNodeStatus)] = model.LabelValue(*cn.CacheNodeStatus)
-				labels[model.LabelName(ecLabelCustomerAZ)] = model.LabelValue(*cn.CustomerAvailabilityZone)
-				labels[model.LabelName(ecLabelEndpointAddress)] = model.LabelValue(*cn.Endpoint.Address)
-				labels[model.LabelName(ecLabelEndpointPort)] = model.LabelValue(fmt.Sprintf("%d", cn.Endpoint.Port))
+				nodeLabels := labels.Clone()
+				nodeLabels[model.LabelName(ecLabelCacheNodeID)] = model.LabelValue(*cn.CacheNodeId)
+				nodeLabels[model.LabelName(ecLabelCacheNodeStatus)] = model.LabelValue(*cn.CacheNodeStatus)
+				nodeLabels[model.LabelName(ecLabelCustomerAZ)] = model.LabelValue(*cn.CustomerAvailabilityZone)
+				nodeLabels[model.LabelName(ecLabelEndpointAddress)] = model.LabelValue(*cn.Endpoint.Address)
+				nodeLabels[model.LabelName(ecLabelEndpointPort)] = model.LabelValue(fmt.Sprintf("%d", cn.Endpoint.Port))
 
 				// Placeholder address
-				labels[model.AddressLabel] = model.LabelValue("undefined")
+				nodeLabels[model.AddressLabel] = model.LabelValue("undefined")
 
 				source := fmt.Sprintf("%s/%s", *cc.ARN, *cn.CacheNodeId)
 				level.Debug(d.logger).Log("msg", "target added", "source", source)
@@ -230,7 +231,7 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 
 				tgs = append(tgs, &targetgroup.Group{
 					Source: source,
-					Labels: labels,
+					Labels: nodeLabels,
 					Targets: []model.LabelSet{
 						{model.AddressLabel: model.LabelValue("undefined")},
 					},
