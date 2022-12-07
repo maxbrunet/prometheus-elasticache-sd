@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.102](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.101...v1.0.102) (2022-12-07)
+
+
+### Bug Fixes
+
+* fix nodes in cache cluster overwriting each other's labels ([#262](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/262)) ([9d94c09](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9d94c09be9437edad21372db37bbe158af7a9c86))
+
 ## [1.0.101](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.100...v1.0.101) (2022-12-06)
 
 
