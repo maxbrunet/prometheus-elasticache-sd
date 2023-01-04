@@ -28,6 +28,12 @@
       "stabilityDays": 7
     },
     {
+      "description": "Bump minimum Go version",
+      "matchManagers": ["gomod"],
+      "matchDepTypes": ["golang"],
+      "rangeStrategy": "bump"
+    },
+    {
       "description": "Group Go updates",
       "matchDatasources": ["docker", "golang-version"],
       "matchPackageNames": ["go", "golang"],
