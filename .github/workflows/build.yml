@@ -34,7 +34,7 @@ jobs:
           go-version-file: .go-version
 
       - name: Set up Go mod cache
-        uses: actions/cache@58c146cc91c5b9e778e71775dfe9bf1442ad9a12 # v3.2.3
+        uses: actions/cache@627f0f41f6904a5b1efbaed9f96d9eb58e92e920 # v3.2.4
         with:
           path: ~/go/pkg/mod
           key: gomod-${{ hashFiles('**/go.sum') }}
@@ -59,7 +59,7 @@ jobs:
           go-version-file: .go-version
 
       - name: Set up Go mod cache
-        uses: actions/cache@58c146cc91c5b9e778e71775dfe9bf1442ad9a12 # v3.2.3
+        uses: actions/cache@627f0f41f6904a5b1efbaed9f96d9eb58e92e920 # v3.2.4
         with:
           path: ~/go/pkg/mod
           key: gomod-${{ hashFiles('**/go.sum') }}
