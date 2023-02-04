@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.121](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.120...v1.0.121) (2023-02-04)
+
+
+### Continuous Integration
+
+* clean up unused IMAGE_NAME var ([#312](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/312)) ([77ea217](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/77ea217a4961792259842737a75fb2726f0ebcfd))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency github.com/golangci/golangci-lint to v1.51.0 ([#313](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/313)) ([5f940a8](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/5f940a825cb32ce9ef8d6ff834ec48910b1e888f))
+* **deps:** update go to v1.20.0 ([#310](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/310)) ([fa37888](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/fa378888651a758b0a1a79dfdfc75f3e343101cb))
+* **renovate:** ensure golang image updates are of build type ([#314](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/314)) ([ec36e6c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ec36e6cde87817721811ca0efc3fa3b3b0643512))
+
+
+### Build System
+
+* **go:** remove all file system paths from binary ([#315](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/315)) ([09770ed](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/09770edb2caa5a5f5ff966743b51666bcb211335))
+
 ## [1.0.120](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.119...v1.0.120) (2023-02-04)
 
 
