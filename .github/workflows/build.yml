@@ -10,7 +10,6 @@ on:
 
 env:
   CGO_ENABLED: '0'
-  IMAGE_NAME: ghcr.io/maxbrunet/prometheus-elasticache-sd
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
