@@ -58,6 +58,7 @@
     },
     {
       "matchPackageNames": ["go", "golang"],
+      "matchPackagePatterns": ["/golang$"],
       "matchUpdateTypes": ["patch", "minor", "major"],
       "semanticCommitType": "build"
     },
