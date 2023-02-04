@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.120](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.119...v1.0.120) (2023-02-04)
+
+
+### Build System
+
+* build container image with Podman ([#311](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/311)) ([f62708c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f62708ce479c77aeb4ebe5819aa091dc25d78365))
+
 ## [1.0.119](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.118...v1.0.119) (2023-02-01)
 
 
