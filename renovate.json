@@ -37,6 +37,7 @@
       "description": "Group Go updates",
       "matchDatasources": ["docker", "golang-version"],
       "matchPackageNames": ["go", "golang"],
+      "matchPackagePatterns": ["/golang$"],
       "commitMessageTopic": "Go",
       "groupName": "go"
     },

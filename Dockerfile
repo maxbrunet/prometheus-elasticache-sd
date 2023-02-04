@@ -1,12 +1,14 @@
-FROM --platform="${BUILDPLATFORM}" golang:1.19.4-alpine@sha256:86d32cc0dfc04757fd8aeebb86308e6d1e3de60c73cb59e0f99c7b2ef77416b6 AS build
+FROM --platform="${BUILDPLATFORM}" docker.io/library/golang:1.19.4-alpine@sha256:86d32cc0dfc04757fd8aeebb86308e6d1e3de60c73cb59e0f99c7b2ef77416b6 AS build
 
 # renovate: datasource=go depName=github.com/prometheus/promu
 ARG PROMU_VERSION=v0.14.0
+ARG TARGETPLATFORM
 ARG TARGETOS
 ARG TARGETARCH
 
 WORKDIR /go/src/app
 
+# hadolint ignore=DL3018
 RUN apk add --no-cache git \
     && go install "github.com/prometheus/promu@${PROMU_VERSION}"
 
@@ -14,9 +16,9 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
-RUN --mount=type=cache,target=/root/.cache/go-build GOOS="${TARGETOS}" GOARCH="${TARGETARCH}" promu build --verbose
+RUN GOOS="${TARGETOS}" GOARCH="${TARGETARCH}" promu build --verbose
 
-FROM quay.io/prometheus/busybox@sha256:42569e375f6a9e41b9004d1192a4aefd0549f92e5606a6170724af124f353309
+FROM --platform="${TARGETPLATFORM}" quay.io/prometheus/busybox@sha256:42569e375f6a9e41b9004d1192a4aefd0549f92e5606a6170724af124f353309
 
 LABEL \
   org.opencontainers.image.source="https://github.com/maxbrunet/prometheus-elasticache-sd" \

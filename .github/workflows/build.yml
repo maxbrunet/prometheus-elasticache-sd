@@ -32,12 +32,7 @@ jobs:
         uses: actions/setup-go@6edd4406fa81c3da01a34fa6f6343087c207a568 # v3.5.0
         with:
           go-version-file: .go-version
-
-      - name: Set up Go mod cache
-        uses: actions/cache@627f0f41f6904a5b1efbaed9f96d9eb58e92e920 # v3.2.4
-        with:
-          path: ~/go/pkg/mod
-          key: gomod-${{ hashFiles('**/go.sum') }}
+          cache: true
 
       - name: Test
         run: go test -v ./...
@@ -58,12 +53,6 @@ jobs:
         with:
           go-version-file: .go-version
 
-      - name: Set up Go mod cache
-        uses: actions/cache@627f0f41f6904a5b1efbaed9f96d9eb58e92e920 # v3.2.4
-        with:
-          path: ~/go/pkg/mod
-          key: gomod-${{ hashFiles('**/go.sum') }}
-
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@08e2f20817b15149a52b5b3ebe7de50aff2ba8c5 # v3.4.0
         with:
@@ -82,6 +71,12 @@ jobs:
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
         with:
           fetch-depth: 2
+
+      - name: Set up Go
+        uses: actions/setup-go@6edd4406fa81c3da01a34fa6f6343087c207a568 # v3.5.0
+        with:
+          go-version-file: .go-version
+          cache: true
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@3ebbd71c74ef574dbc558c82f70e52732c8b44fe # v2.2.1
@@ -105,21 +100,20 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@15c905b16b06416d2086efa066dd8e3a35cc7f98 # v2.4.0
-
-      - name: Build container images
-        uses: docker/build-push-action@1104d471370f9806843c095c1db02b5a90c5f8b6 # v3.3.1
-        with:
-          context: .
-          tags: ${{ env.IMAGE_NAME }}:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+      - name: Build container image
+        run: podman build --tag 'ghcr.io/maxbrunet/prometheus-elasticache-sd:latest' .
 
   semantic-release:
     needs: [codeql-analyze, build, lint, test]
-    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    container:
+      # https://github.com/containers/podman/tree/main/contrib/podmanimage
+      image: quay.io/containers/podman:v4.3.1
+      options: >-
+        --device /dev/fuse:rw
+        --privileged
+        --security-opt label=disable
+        --security-opt seccomp=unconfined
     permissions:
       contents: write
       issues: write
@@ -129,6 +123,9 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - name: Install dependencies
+        run: dnf install --assumeyes --repo fedora git
+
       # full checkout for semantic-release
       - name: Checkout repository
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
@@ -137,40 +134,42 @@ jobs:
           # Use Deploy key with write access to push changelog to main branch (protected branch)
           ssh-key: ${{ secrets.SEMANTIC_RELEASE_SSH_KEY }}
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@15c905b16b06416d2086efa066dd8e3a35cc7f98 # v2.4.0
+      # The checkout action is supposed to take of it, but it is not enough :/
+      - name: Add repository directory to the git global config as a safe directory
+        run: git config --global --add safe.directory "${GITHUB_WORKSPACE}"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+        with:
+          node-version: lts/*
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a # tag=v2.1.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+        run: podman login --username "${USERNAME}" --password "${PASSWORD}" "${REGISTRY}"
+        if: github.event_name != 'pull_request'
+        env:
+          USERNAME: ${{ github.actor }}
+          PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          REGISTRY: ghcr.io
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@8f6ceb9d5aae5578b1dcda6af00008235204e7fa # tag=v3.2.0
-        id: semantic-release
         with:
           # renovate: datasource=npm depName=semantic-release
           semantic_version: 19.0.5
+          dry_run: ${{ github.event_name == 'pull_request' }}
           extra_plugins: |
             conventional-changelog-conventionalcommits@5.0.0
             @semantic-release/changelog@6.0.2
+            @semantic-release/exec@6.0.3
             @semantic-release/git@10.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # We rebuild from the release commit, so promu has the correct Git metadata from the Git tag
-      - name: Build and push container images
-        if: ${{ steps.semantic-release.outputs.new_release_published == 'true' }}
-        uses: docker/build-push-action@1104d471370f9806843c095c1db02b5a90c5f8b6 # v3.3.1
-        with:
-          # Use Path context, otherwise `.git` directory is not available for promu
-          context: .
-          platforms: linux/amd64,linux/arm,linux/arm64,linux/ppc64le,linux/s390x
-          push: true
-          tags: |
-            ${{ env.IMAGE_NAME }}:v${{ steps.semantic-release.outputs.new_release_version }}
-            ${{ env.IMAGE_NAME }}:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+      - name: Post Login to GitHub Container Registry
+        run: |
+          if podman login --get-login "${REGISTRY}" >/dev/null; then
+            podman logout "${REGISTRY}"
+          fi
+        if: always()
+        env:
+          REGISTRY: ghcr.io
