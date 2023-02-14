@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.125](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.124...v1.0.125) (2023-02-14)
+
+
+### Build System
+
+* **deps:** update go to v1.20.1 ([#329](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/329)) ([9a41656](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9a4165690c985c91bb05c07c45438a743a342a6e))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency github.com/golangci/golangci-lint to v1.51.1 ([#328](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/328)) ([5133a41](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/5133a412af3b4c2c844e85c83bd251526678113a))
+* **deps:** update github/codeql-action action to v2.2.4 ([#324](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/324)) ([e0c8935](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e0c89356cbe44c91408ab23cc0e3b88953a5687d))
+* **deps:** update go to 0d145ec ([#327](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/327)) ([cb46094](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/cb46094f45d619ac88568d4acfa40515dc574599))
+* **deps:** update go to 8a0bdfe ([#326](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/326)) ([c226482](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c226482f027720c6f0d394c27f3ada0d3ffe9c7a))
+* **deps:** update go to a074c6a ([#325](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/325)) ([4b37f4f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4b37f4fe7f80648faf44f825e27123fddf1c03a3))
+* **deps:** update quay.io/containers/podman docker tag to v4.4.1 ([#330](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/330)) ([c0c3a5c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c0c3a5c5c49c9046ccd3cbb7288743d8343f8d33))
+
 ## [1.0.124](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.123...v1.0.124) (2023-02-10)
 
 
