@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.126](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.125...v1.0.126) (2023-02-17)
+
+
+### Build System
+
+* **deps:** update module gopkg.in/alecthomas/kingpin.v2 to v2.3.1 ([#320](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/320)) ([56a11be](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/56a11be30f8212fc4ae265b5e4cd071fb38d68c0))
+
 ## [1.0.125](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.124...v1.0.125) (2023-02-14)
 
 
