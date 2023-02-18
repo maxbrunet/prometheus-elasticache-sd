@@ -119,7 +119,7 @@ jobs:
       packages: write
       pull-requests: write
 
-    timeout-minutes: 10
+    timeout-minutes: 30
 
     steps:
       - name: Install dependencies
