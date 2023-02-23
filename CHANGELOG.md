@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.127](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.126...v1.0.127) (2023-02-23)
+
+
+### Continuous Integration
+
+* bump release job timeout ([#331](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/331)) ([6edbaf6](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6edbaf6f17672b08bb703257e126a93d00a2c87a))
+
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#332](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/332)) ([6d9c487](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6d9c487c60262cd86e0ce4956c8260e4263a2c4a))
+
 ## [1.0.126](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.125...v1.0.126) (2023-02-17)
 
 
