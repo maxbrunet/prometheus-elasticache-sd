@@ -304,15 +304,22 @@ func main() {
 	prometheus.MustRegister(version.NewCollector("prometheus_elasticache_sd"))
 
 	http.Handle(*metricsPath, promhttp.Handler())
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte(`<html>
-             <head><title>Prometheus ElastiCache Service Discovery</title></head>
-             <body>
-             <h1>Prometheus ElastiCache Service Discovery</h1>
-             <p><a href='` + *metricsPath + `'>Metrics</a></p>
-             </body>
-             </html>`))
+	landingPage, err := web.NewLandingPage(web.LandingConfig{
+		Name:        "ElastiCache Service Discovery",
+		Description: "Prometheus ElastiCache Service Discovery",
+		Version:     version.Info(),
+		Links: []web.LandingLinks{
+			{
+				Address: *metricsPath,
+				Text:    "Metrics",
+			},
+		},
 	})
+	if err != nil {
+		level.Error(logger).Log("msg", "Error instantiating landing page", "err", err)
+		os.Exit(1)
+	}
+	http.Handle("/", landingPage)
 
 	srv := &http.Server{}
 
