@@ -21,6 +21,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/alecthomas/kingpin/v2"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"
@@ -43,7 +44,6 @@ import (
 	"github.com/prometheus/prometheus/discovery/targetgroup"
 	"github.com/prometheus/prometheus/documentation/examples/custom-sd/adapter"
 	"github.com/prometheus/prometheus/util/strutil"
-	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )
 
 const (
