@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.134](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.133...v1.0.134) (2023-03-15)
+
+
+### Code Refactoring
+
+* use new toolkit landing page function ([#346](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/346)) ([f063c83](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f063c837c0d34b5f5efe80374447a542fd49556b))
+
+
+### Miscellaneous Chores
+
+* **deps:** update cycjimmy/semantic-release-action action to v3.4.0 ([#348](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/348)) ([6d5afcc](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6d5afccf8956cd70ee6465f180d0b9353172d057))
+* **deps:** update github/codeql-action action to v2.2.6 ([#347](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/347)) ([59a44ec](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/59a44ecc2de022acbec1cc0251512cf746e4d32a))
+* **deps:** update github/codeql-action action to v2.2.7 ([#349](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/349)) ([600504b](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/600504b252e2ee3fd242ad514e53d7be361a3a59))
+
+
+### Build System
+
+* **deps:** update module github.com/prometheus/common to v0.42.0 ([#350](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/350)) ([6c9a2bc](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6c9a2bc88987a934c769b2a2ceef2878edf3eb85))
+
 ## [1.0.133](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.132...v1.0.133) (2023-03-08)
 
 
