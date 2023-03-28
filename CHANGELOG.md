@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.140](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.139...v1.0.140) (2023-03-28)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v3.5.0 ([#360](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/360)) ([fceb6d9](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/fceb6d9f42239185058c21faecc9ec12664de9a1))
+* **deps:** update dependency @semantic-release/changelog to v6.0.3 ([#359](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/359)) ([efe7268](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/efe72682fb00941c246aa59314e7cb3784ec3af7))
+* **deps:** update dependency github.com/golangci/golangci-lint to v1.52.0 ([#361](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/361)) ([86c296f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/86c296f8909cacb829bce4290d8f823f5b62b1eb))
+* **deps:** update dependency github.com/golangci/golangci-lint to v1.52.1 ([#364](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/364)) ([ca13a7f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ca13a7f6fde788c2a8bc6a8e54031a01b24af4f2))
+* **deps:** update github/codeql-action action to v2.2.9 ([#362](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/362)) ([c6dcc53](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c6dcc53078e97a897035ae0496e6e60836848acb))
+* **deps:** update go to 576da1a ([#363](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/363)) ([044c15f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/044c15f57012d876de87e120157ea82363e649fb))
+
+
+### Build System
+
+* **deps:** update module github.com/prometheus/prometheus to v0.43.0 ([#366](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/366)) ([2ee74c9](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/2ee74c97abbe3e4bb7ebc659ab000e9f4296cd80))
+
 ## [1.0.139](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.138...v1.0.139) (2023-03-23)
 
 
