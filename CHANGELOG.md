@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.142](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.141...v1.0.142) (2023-04-04)
+
+
+### Miscellaneous Chores
+
+* **deps:** update cycjimmy/semantic-release-action action to v3.4.1 ([#370](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/370)) ([670aea5](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/670aea5ff2db1e24cb22bc279b5d84b18ba54b2d))
+* **deps:** update cycjimmy/semantic-release-action action to v3.4.2 ([#371](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/371)) ([5962230](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/5962230f74b576626dcda026e7ec4c8c3b0889fc))
+* **deps:** update dependency github.com/golangci/golangci-lint to v1.52.2 ([#372](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/372)) ([a0fee60](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/a0fee6053d3c03d9f80372053c8e8379f7fb4ca6))
+* **deps:** update go to 87734b7 ([#369](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/369)) ([11e34b0](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/11e34b0982af339cdc6e6400cce34a9641bf5239))
+* **deps:** update go to 96a0a98 ([#368](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/368)) ([85ebf00](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/85ebf00a9c850a1adf69b53f2e7a1ea6b3875ba6))
+* **deps:** update go to ff56122 ([#367](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/367)) ([9c2dbe6](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9c2dbe6cf32b534457bd70c79760c731f6bdb053))
+
+
+### Build System
+
+* **deps:** update go to v1.20.3 ([#373](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/373)) ([486674a](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/486674a590c7a85662e3dbc3ab1a5f072f0e1406))
+
 ## [1.0.141](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.140...v1.0.141) (2023-03-29)
 
 
