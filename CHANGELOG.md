@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.147](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.146...v1.0.147) (2023-05-01)
+
+
+### Miscellaneous Chores
+
+* **deps:** update github/codeql-action action to v2.3.0 ([#386](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/386)) ([a37138b](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/a37138b0ff80a360419389dd6a7a13d1375b8779))
+* **deps:** update github/codeql-action action to v2.3.1 ([#387](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/387)) ([ea300f0](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ea300f0324ae0a1bc970924a371a3ec4b7dc404b))
+* **deps:** update github/codeql-action action to v2.3.2 ([#388](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/388)) ([8f737b0](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/8f737b01bb17c2c4047d0927e0cde6f7af033cbf))
+
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#389](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/389)) ([4be4975](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4be4975f38a3dea35ccf13601c265587743edc61))
+
 ## [1.0.146](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.145...v1.0.146) (2023-04-20)
 
 
