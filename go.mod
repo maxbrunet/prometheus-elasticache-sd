@@ -11,7 +11,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/sts v1.18.10
 	github.com/aws/smithy-go v1.13.5
 	github.com/go-kit/log v0.2.1
-	github.com/prometheus/client_golang v1.15.0
+	github.com/prometheus/client_golang v1.15.1
 	github.com/prometheus/common v0.42.0
 	github.com/prometheus/exporter-toolkit v0.10.0
 	github.com/prometheus/prometheus v0.43.0
