@@ -18,7 +18,7 @@ RUN go mod download
 COPY . .
 RUN GOOS="${TARGETOS}" GOARCH="${TARGETARCH}" promu build --verbose
 
-FROM --platform="${TARGETPLATFORM}" quay.io/prometheus/busybox@sha256:6ac4a6485b1b3cf25b112410fb1af801754a5cf3a41e161b195f40f84aaa568b
+FROM --platform="${TARGETPLATFORM}" quay.io/prometheus/busybox@sha256:194c5dcad0e5b03e5a7fc2f629fdd774e1af3c6112ce534f41e5945ae7094b56
 
 LABEL \
   org.opencontainers.image.source="https://github.com/maxbrunet/prometheus-elasticache-sd" \
