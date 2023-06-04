@@ -78,6 +78,11 @@ scrape_configs:
         replacement: <<REDIS-EXPORTER-HOSTNAME>>:9121
 ```
 
+### prometheus/memcached_exporter
+
+This service discovery can be used with the official [memcached_exporter](https://github.com/prometheus/memcached_exporter),
+see its [README](https://github.com/prometheus/memcached_exporter#multi-target) for details.
+
 ## Development
 
 ### Build
