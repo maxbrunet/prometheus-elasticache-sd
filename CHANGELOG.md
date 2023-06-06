@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.161](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.160...v1.0.161) (2023-06-06)
+
+
+### Documentation
+
+* **readme:** add memcached_exporter usage ([#410](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/410)) ([696c3c3](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/696c3c3c0fa1945f91a1bae16904cd78cb4cb602))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency conventional-changelog-conventionalcommits to v6 ([#411](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/411)) ([6492508](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/64925089c6e578537862df0eb5ae2de546d9c235))
+* **deps:** update github/codeql-action action to v2.3.6 ([#408](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/408)) ([a9ce23b](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/a9ce23b2a608624d29d430b4c438466763051774))
+* **deps:** update golangci/golangci-lint-action action to v3.5.0 ([#409](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/409)) ([b4c718b](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b4c718b150e6e2352589c9154a147816ee918954))
+* **deps:** update quay.io/containers/podman docker tag to v4.5.1 ([#413](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/413)) ([d56d288](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/d56d2884aa2c2ea9a015dd072519ffc0ef0214cf))
+
+
+### Build System
+
+* **deps:** update go to v1.20.5 ([#412](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/412)) ([bc892bd](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/bc892bdc23374edac999e63fe62a07e27b42f77c))
+
 ## [1.0.160](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.159...v1.0.160) (2023-05-31)
 
 
