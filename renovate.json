@@ -51,6 +51,12 @@
       "allowedVersions": "<1"
     },
     {
+      "description": "Limit podman image digest to monthly (built daily)",
+      "matchPackageNames": ["quay.io/containers/podman"],
+      "matchUpdateTypes": ["digest"],
+      "extends": ["schedule:monthly"]
+    },
+    {
       "matchDepTypes": ["require"],
       "semanticCommitType": "build"
     },
