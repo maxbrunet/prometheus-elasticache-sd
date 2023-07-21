@@ -51,10 +51,11 @@
       "allowedVersions": "<1"
     },
     {
-      "description": "Limit podman image digest to monthly (built daily)",
+      "description": "Disable pinning podman image digest",
+      "matchManagers": ["github-actions"],
+      "matchDepTypes": ["container"],
       "matchPackageNames": ["quay.io/containers/podman"],
-      "matchUpdateTypes": ["digest"],
-      "extends": ["schedule:monthly"]
+      "pinDigests": false
     },
     {
       "matchDepTypes": ["require"],
