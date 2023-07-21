@@ -106,7 +106,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       # https://github.com/containers/podman/tree/main/contrib/podmanimage
-      image: quay.io/containers/podman:v4.5.1@sha256:a9197f83e7c6b6abf4e17df52b4bfb4bab47231a4da2786300505ecb41f816bd
+      image: quay.io/containers/podman:v4.5.1
       options: >-
         --device /dev/fuse:rw
         --privileged
