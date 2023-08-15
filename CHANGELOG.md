@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.181](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.180...v1.0.181) (2023-08-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update golangci/golangci-lint-action action to v3.7.0 ([#465](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/465)) ([6f671ac](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6f671ac958d523f0a2925b1c337fa955223dfd5b))
+
+
+### Build System
+
+* **deps:** update quay.io/prometheus/busybox docker digest to e85976e ([#466](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/466)) ([a19c537](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/a19c5379ca238d035ccb3bee620db52e2bba7de7))
+
 ## [1.0.180](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.179...v1.0.180) (2023-08-14)
 
 
