@@ -136,11 +136,6 @@ jobs:
       - name: Add repository directory to the git global config as a safe directory
         run: git config --global --add safe.directory "${GITHUB_WORKSPACE}"
 
-      - name: Set up Node.js
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
-        with:
-          node-version: lts/*
-
       - name: Login to GitHub Container Registry
         run: podman login --username "${USERNAME}" --password "${PASSWORD}" "${REGISTRY}"
         if: github.event_name != 'pull_request'
