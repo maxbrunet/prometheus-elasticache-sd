@@ -1,15 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:best-practices",
     ":automergeDigest",
     ":automergeMinor",
     ":maintainLockFilesMonthly",
     ":rebaseStalePrs",
     ":semanticCommits",
     ":semanticCommitScope(deps)",
-    "docker:pinDigests",
-    "helpers:pinGitHubActionDigests",
     "regexManagers:dockerfileVersions"
   ],
   "assignees": ["maxbrunet"],
@@ -23,7 +21,7 @@
     {
       "description": "One week stability period for Go packages",
       "matchDatasources": ["go"],
-      "stabilityDays": 7
+      "minimumReleaseAge": "7 days"
     },
     {
       "description": "Bump minimum Go version",
@@ -75,11 +73,13 @@
   "regexManagers": [
     {
       "description": "Update version keys in YAML files",
+      "customType": "regex",
       "fileMatch": ["(^|/).*.ya?ml$"],
       "matchStrings": ["# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?\\s*[\\w-_]*version: (?<currentValue>.*?)\\s"]
     },
     {
       "description": "Update Golang in .go-version file",
+      "customType": "regex",
       "fileMatch": ["(^|/)\\.go-version$"],
       "matchStrings": ["^\\s*(?<currentValue>.+?)\\s*$"],
       "depNameTemplate": "go",
@@ -87,6 +87,7 @@
     },
     {
       "description": "Update semantic-release plugins",
+      "customType": "regex",
       "fileMatch": ["^\\.github/workflows/build\\.yml$"],
       "matchStrings": ["\\s{12}(?<depName>\\S+?)@(?<currentValue>.+?)\\s"],
       "datasourceTemplate": "npm"
