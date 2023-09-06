@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.188](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.187...v1.0.188) (2023-09-06)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v4 ([#483](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/483)) ([b28d544](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b28d544d1c7dc497c32ae95f11b84e4b2cfed671))
+* **deps:** update cycjimmy/semantic-release-action action to v4 ([#480](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/480)) ([375da49](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/375da491eab95650cc69725d58577d13b8759e9c))
+* **deps:** update dependency conventional-changelog-conventionalcommits to v7 ([#474](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/474)) ([627d04f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/627d04f2d497d5f71c72744e9b0f2dbb21bb441c))
+* **deps:** update dependency semantic-release to v21 ([#289](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/289)) ([92125da](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/92125da24b0783dd49b72d7cf73ab923db9de969))
+* **renovate:** refresh configuration ([#482](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/482)) ([6b4f9f1](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6b4f9f1227d4c983c4f3feab225ffc58e92c54c5))
+
+
+### Build System
+
+* **deps:** update go to v1.21.1 ([#484](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/484)) ([e53c0b3](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e53c0b30c1739cbe926d91f3bfc2ca50586ead8f))
+
 ## [1.0.187](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.186...v1.0.187) (2023-08-30)
 
 
