@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.193](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.192...v1.0.193) (2023-09-25)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v4.1.0 ([#496](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/496)) ([4c16e2a](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4c16e2a6490b3262a5b9e8d62f7eae1471c949db))
+* **deps:** update dependency semantic-release to v21.1.2 ([#492](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/492)) ([ddfd51c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ddfd51cf7f3d6803f09aa77722f0aa316548d586))
+* **deps:** update dependency semantic-release to v22 ([#493](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/493)) ([e743c35](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e743c35780a5a35f7326a8d178af10742bf40700))
+* **deps:** update github/codeql-action action to v2.21.8 ([#494](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/494)) ([a0dc942](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/a0dc942f435cd78cec8a11f252f4217ba95a138a))
+* **deps:** update quay.io/containers/podman docker tag to v4.6.2 ([#495](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/495)) ([daee659](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/daee6590d3d902b15a8453ea24c5ec209387b304))
+
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#497](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/497)) ([596f78a](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/596f78a5ae6c58737600b05fe5f7546a4044770a))
+
 ## [1.0.192](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.191...v1.0.192) (2023-09-15)
 
 
