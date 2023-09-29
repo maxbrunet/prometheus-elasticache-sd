@@ -1,4 +1,4 @@
-FROM --platform="${BUILDPLATFORM}" docker.io/library/golang:1.21.1-alpine@sha256:2b74246a3464da3bd3edc19b4c029447c795e772f2068e40f39817ba89ae1054 AS build
+FROM --platform="${BUILDPLATFORM}" docker.io/library/golang:1.21.1-alpine@sha256:4bc6541af94a67d9dcabba9826c36e4e9497dacf4e8755ac503000b6ff75318f AS build
 
 # renovate: datasource=go depName=github.com/prometheus/promu
 ARG PROMU_VERSION=v0.15.0
