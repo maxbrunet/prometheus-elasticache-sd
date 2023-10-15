@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.205](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.204...v1.0.205) (2023-10-15)
+
+
+### Reverts
+
+* downgrade semantic-release-action to v3 ([#522](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/522)) ([b03b2fd](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b03b2fd30e6673219e44ac66b385ec880f7bf50d))
+
+
+### Build System
+
+* **deps:** update go to v1.21.3 ([#515](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/515)) ([84823a5](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/84823a5db0b7efe128d73c8626168ab2afe8d884))
+
 ## [1.0.204](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.203...v1.0.204) (2023-10-15)
 
 
