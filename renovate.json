@@ -24,7 +24,7 @@
       "description": "Bump minimum Go version",
       "matchManagers": ["gomod"],
       "matchDepTypes": ["golang"],
-      "rangeStrategy": "bump"
+      "rangeStrategy": "replace"
     },
     {
       "description": "Group Go updates",
