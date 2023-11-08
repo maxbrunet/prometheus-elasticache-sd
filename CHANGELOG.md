@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.212](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.211...v1.0.212) (2023-11-08)
+
+
+### Build System
+
+* **deps:** update go to v1.21.4 ([#541](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/541)) ([0733f31](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/0733f317e0ae3c94bc6a923b2c1f64710464a327))
+
 ## [1.0.211](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.210...v1.0.211) (2023-11-07)
 
 
