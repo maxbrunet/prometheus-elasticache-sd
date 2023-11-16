@@ -3,7 +3,7 @@ module github.com/maxbrunet/prometheus-elasticache-sd
 go 1.21
 
 require (
-	github.com/alecthomas/kingpin/v2 v2.3.2
+	github.com/alecthomas/kingpin/v2 v2.4.0
 	github.com/aws/aws-sdk-go-v2 v1.22.2
 	github.com/aws/aws-sdk-go-v2/config v1.22.3
 	github.com/aws/aws-sdk-go-v2/credentials v1.15.2
