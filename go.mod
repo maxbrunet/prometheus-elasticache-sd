@@ -5,10 +5,10 @@ go 1.21
 require (
 	github.com/alecthomas/kingpin/v2 v2.4.0
 	github.com/aws/aws-sdk-go-v2 v1.23.0
-	github.com/aws/aws-sdk-go-v2/config v1.25.2
-	github.com/aws/aws-sdk-go-v2/credentials v1.16.1
+	github.com/aws/aws-sdk-go-v2/config v1.25.3
+	github.com/aws/aws-sdk-go-v2/credentials v1.16.2
 	github.com/aws/aws-sdk-go-v2/service/elasticache v1.32.2
-	github.com/aws/aws-sdk-go-v2/service/sts v1.25.2
+	github.com/aws/aws-sdk-go-v2/service/sts v1.25.3
 	github.com/aws/smithy-go v1.17.0
 	github.com/go-kit/log v0.2.1
 	github.com/prometheus/client_golang v1.17.0
@@ -26,7 +26,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.10.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.10.3 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.17.2 // indirect
-	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.19.2 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.20.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/coreos/go-systemd/v22 v22.5.0 // indirect
