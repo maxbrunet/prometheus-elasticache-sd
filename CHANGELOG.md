@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.241](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.240...v1.0.241) (2023-12-16)
+
+
+### Build System
+
+* **deps:** update module github.com/prometheus/exporter-toolkit to v0.11.0 ([#588](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/588)) ([697f9d2](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/697f9d2ccf9ff36c8c448ee782c9a7f03b2c1cf4))
+
 ## [1.0.240](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.239...v1.0.240) (2023-12-15)
 
 
