@@ -198,8 +198,8 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 				// its tags are unavailable, so if the relabeling logic depends on `__meta_elasticache_tag_<tagkey>` labels,
 				// the clusters may disappear from the Prometheus targets when that happens,
 				// thus we try to reuse the last tags we know about.
-				if _, ok := d.lastTags[*cc.ARN]; !ok {
-					level.Warn(d.logger).Log("msg", "reusing last known tags", "err", err.Error(), "ARN", *cc.ARN)
+				if _, ok := d.lastTags[*cc.ARN]; ok {
+					level.Warn(d.logger).Log("msg", "reusing last known tags", "ARN", *cc.ARN)
 					tags = d.lastTags[*cc.ARN]
 				}
 			} else {
