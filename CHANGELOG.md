@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.256](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.255...v1.0.256) (2024-02-12)
+
+
+### Bug Fixes
+
+* fix fallback to last cached tags ([#616](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/616)) ([dd5a78d](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/dd5a78db4903344321c8c6abd8db9d6eca7b12fe))
+
+
+### Miscellaneous Chores
+
+* **deps:** update golangci/golangci-lint-action action to v3.7.1 ([#622](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/622)) ([da884fb](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/da884fb11a3cc5bfe9ee89e9bb2089d674802fdb))
+
 ## [1.0.255](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.254...v1.0.255) (2024-02-07)
 
 
