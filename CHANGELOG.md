@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.255](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.254...v1.0.255) (2024-02-07)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/setup-node action to v4.0.2 ([#621](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/621)) ([287349b](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/287349bf845758ddb2d47feb142b9cd797d8a242))
+
+
+### Build System
+
+* **deps:** update go to v1.22.0 ([#620](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/620)) ([57fdfe0](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/57fdfe03045b2e9bf8549e7d2a512608ac4979cf))
+
+## [1.0.254](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.253...v1.0.254) (2024-02-07)
+
+
+### Build System
+
+* **deps:** update go ([#619](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/619)) ([ac2caa7](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ac2caa7d55aaf8f91522d4db0956fe89bfb1fe39))
+
+## [1.0.253](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.252...v1.0.253) (2024-02-06)
+
+
+### Miscellaneous Chores
+
+* **deps:** update github/codeql-action action to v3.24.0 ([#617](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/617)) ([00c0c5b](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/00c0c5bbdfd0ad21c3aa492961ca98860e05b0c6))
+* **deps:** update quay.io/containers/podman docker tag to v4.9.0 ([#614](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/614)) ([34f2eb8](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/34f2eb805f1dcc02cb6c2c0c7bbe7aa0e2679bb3))
+
+
+### Build System
+
+* **deps:** update go to v1.21.7 ([#618](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/618)) ([45e49f7](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/45e49f70ea54ad7cf597a3ae0a4cf17c85e5baf3))
+
 ## [1.0.252](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.251...v1.0.252) (2024-01-29)
 
 
