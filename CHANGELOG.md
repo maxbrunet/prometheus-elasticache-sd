@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.258](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.257...v1.0.258) (2024-03-03)
+
+
+### Miscellaneous Chores
+
+* **deps:** update module github.com/golangci/golangci-lint to v1.56.2 ([#630](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/630)) ([5a03026](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/5a03026e6bce4606723ddf163d3ffcd1f67bf305))
+
+
+### Build System
+
+* **deps:** update module github.com/prometheus/common to v0.48.0 ([#628](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/628)) ([2b46eda](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/2b46eda20aa71188835aa64f0b6ac714bc285f8a))
+
 ## [1.0.257](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.256...v1.0.257) (2024-03-02)
 
 
