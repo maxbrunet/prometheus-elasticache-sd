@@ -344,12 +344,18 @@ func main() {
 		os.Exit(1)
 	}
 
+	discMetrics, ok := metrics[conf.Name()]
+	if !ok {
+		level.Error(logger).Log("msg", "discoverer metrics not registered")
+		os.Exit(1)
+	}
+
 	disc, err := conf.NewDiscoverer(discovery.DiscovererOptions{
 		Logger:  logger,
-		Metrics: metrics[conf.Name()],
+		Metrics: discMetrics,
 	})
 	if err != nil {
-		level.Error(logger).Log("msg", "failed to register service discovery metrics", "err", err)
+		level.Error(logger).Log("msg", "failed to instantiate discoverer", "err", err)
 		os.Exit(1)
 	}
 	ctx := context.Background()
