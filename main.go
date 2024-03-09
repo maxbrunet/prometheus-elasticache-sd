@@ -33,6 +33,7 @@ import (
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
+	versioncollector "github.com/prometheus/client_golang/prometheus/collectors/version"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/common/model"
 	"github.com/prometheus/common/promlog"
@@ -363,7 +364,7 @@ func main() {
 	sdAdapter := adapter.NewAdapter(ctx, *outputFile, "elasticache_sd", disc, logger, metrics, reg)
 	sdAdapter.Run()
 
-	prometheus.MustRegister(version.NewCollector("prometheus_elasticache_sd"))
+	prometheus.MustRegister(versioncollector.NewCollector("prometheus_elasticache_sd"))
 
 	http.Handle(*metricsPath, promhttp.Handler())
 	landingPage, err := web.NewLandingPage(web.LandingConfig{
