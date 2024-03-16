@@ -90,40 +90,40 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    timeout-minutes: 30
+    timeout-minutes: 10
 
     steps:
+      # full checkout for semantic-release
       - name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 2
 
-      - name: Build container image
-        run: podman build --tag 'ghcr.io/maxbrunet/prometheus-elasticache-sd:latest' .
+      - name: Set up Go
+        uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
+        with:
+          go-version-file: .go-version
+
+      - name: Build binaries
+        uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v5.0.0
+        with:
+          # renovate: datasource=go depName=github.com/goreleaser/goreleaser
+          version: v1.24.0
+          args: build --clean --single-target --snapshot
 
   semantic-release:
     needs: [codeql-analyze, build, lint, test]
     runs-on: ubuntu-latest
-    container:
-      # https://github.com/containers/podman/tree/main/contrib/podmanimage
-      image: quay.io/containers/podman:v4.9.3
-      options: >-
-        --device /dev/fuse:rw
-        --privileged
-        --security-opt label=disable
-        --security-opt seccomp=unconfined
     permissions:
       contents: write
+      id-token: write
       issues: write
       packages: write
       pull-requests: write
 
-    timeout-minutes: 30
+    timeout-minutes: 45
 
     steps:
-      - name: Install dependencies
-        run: dnf install --assumeyes --repo fedora git
-
       # full checkout for semantic-release
       - name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -132,28 +132,36 @@ jobs:
           # Use Deploy key with write access to push changelog to main branch (protected branch)
           ssh-key: ${{ secrets.SEMANTIC_RELEASE_SSH_KEY }}
 
-      # The checkout action is supposed to take of it, but it is not enough :/
-      - name: Add repository directory to the git global config as a safe directory
-        run: git config --global --add safe.directory "${GITHUB_WORKSPACE}"
-
-      - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+      - name: Set up Go
+        uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
         with:
-          node-version: lts/*
+          go-version-file: .go-version
+
+      - name: Set up GoReleaser
+        uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v5.0.0
+        with:
+          # renovate: datasource=go depName=github.com/goreleaser/goreleaser
+          version: v1.24.0
+          install-only: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Cosign
+        uses: sigstore/cosign-installer@e1523de7571e31dbe865fd2e80c5c7c23ae71eb4 # v3.4.0
 
       - name: Login to GitHub Container Registry
-        run: podman login --username "${USERNAME}" --password "${PASSWORD}" "${REGISTRY}"
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3.1.0
         if: github.event_name != 'pull_request'
-        env:
-          USERNAME: ${{ github.actor }}
-          PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-          REGISTRY: ghcr.io
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@8e58d20d0f6c8773181f43eb74d6a05e3099571d # v3.4.2
+        uses: cycjimmy/semantic-release-action@61680d0e9b02ff86f5648ade99e01be17f0260a4 # v4.0.0
         with:
           # renovate: datasource=npm depName=semantic-release
-          semantic_version: 19.0.5
+          semantic_version: 23.0.4
           dry_run: ${{ github.event_name == 'pull_request' }}
           extra_plugins: |
             conventional-changelog-conventionalcommits@7.0.2
@@ -162,12 +170,3 @@ jobs:
             @semantic-release/git@10.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Post Login to GitHub Container Registry
-        run: |
-          if podman login --get-login "${REGISTRY}" >/dev/null; then
-            podman logout "${REGISTRY}"
-          fi
-        if: always()
-        env:
-          REGISTRY: ghcr.io
