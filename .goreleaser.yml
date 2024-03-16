@@ -1,0 +1,116 @@
+version: 2
+builds:
+  - &build-default
+    id: default
+    main: .
+    ldflags:
+      - -X github.com/prometheus/common/version.Version={{ .Version }}
+      - -X github.com/prometheus/common/version.Revision={{ .Commit }}
+      - -X github.com/prometheus/common/version.Branch={{ .Branch }}
+      - -X github.com/prometheus/common/version.BuildUser=GoReleaser
+      - -X github.com/prometheus/common/version.BuildDate={{ .CommitDate }}
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -trimpath
+    goos:
+      - darwin
+      - dragonfly
+      - freebsd
+      - illumos
+      - linux
+      - netbsd
+    goarch:
+      - '386'
+      - amd64
+      - arm
+      - arm64
+      - mips
+      - mips64
+      - mips64le
+      - mipsle
+      - ppc64
+      - ppc64le
+      - riscv64
+      - s390x
+    goarm:
+      - '5'
+      - '6'
+      - '7'
+    goamd64:
+      - v1
+    goarm64:
+      - v8.0
+    gomips:
+      - hardfloat
+    go386:
+      - sse2
+    goppc64:
+      - power8
+    goriscv64:
+      - rva22u64
+    ignore:
+      - goos: freebsd
+        goarch: arm
+        goarm: '5'
+      - goos: netbsd
+        goarch: arm
+        goarm: '5'
+    mod_timestamp: '{{ .CommitTimestamp }}'
+  - <<: *build-default
+    id: windows
+    goos:
+      - windows
+    goarch:
+      - '386'
+      - amd64
+      - arm64
+archives:
+  - &archive-default
+    id: default
+    builds:
+      - default
+      - windows
+    name_template: '{{ .ProjectName }}-{{ .Version }}.{{ .Os }}-{{ .Arch }}{{
+      if .Arm }}v{{ .Arm }}{{ end }}{{ if and .Mips (ne .Mips "hardfloat") }}-{{
+      .Mips }}{{ end }}'
+    format: tar.gz
+    files:
+      - LICENSE
+      - NOTICE
+  - <<: *archive-default
+    id: zip
+    builds:
+      - windows
+    format: zip
+checksum:
+  name_template: sha256sums.txt
+kos:
+  - id: default
+    repository: ghcr.io/maxbrunet/prometheus-elasticache-sd
+    bare: true
+    tags:
+      - '{{ .Tag }}'
+      - latest
+    base_image: quay.io/prometheus/busybox@sha256:dfa54ef35e438b9e71ac5549159074576b6382f95ce1a434088e05fd6b730bc4
+    creation_time: '{{ .CommitTimestamp }}'
+    ko_data_creation_time: '{{ .CommitTimestamp }}'
+    labels:
+      org.opencontainers.image.licenses: Apache-2.0
+      org.opencontainers.image.source: https://github.com/maxbrunet/prometheus-elasticache-sd
+      org.opencontainers.image.url: https://github.com/maxbrunet/prometheus-elasticache-sd
+    user: 1000:1000
+    platforms:
+      - linux/amd64
+      - linux/arm/v7
+      - linux/arm64
+      - linux/ppc64le
+      - linux/s390x
+docker_signs:
+  - artifacts: manifests
+    cmd: cosign
+    args:
+      - sign
+      - --yes
+      - ${artifact}
+    output: true
