@@ -14,7 +14,7 @@ require (
 	github.com/prometheus/client_golang v1.19.0
 	github.com/prometheus/common v0.50.0
 	github.com/prometheus/exporter-toolkit v0.11.0
-	github.com/prometheus/prometheus v0.50.1
+	github.com/prometheus/prometheus v0.51.0
 )
 
 require (
@@ -50,8 +50,8 @@ require (
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	k8s.io/apimachinery v0.28.6 // indirect
-	k8s.io/client-go v0.28.6 // indirect
+	k8s.io/apimachinery v0.29.2 // indirect
+	k8s.io/client-go v0.29.2 // indirect
 	k8s.io/klog/v2 v2.120.1 // indirect
 	k8s.io/utils v0.0.0-20230726121419-3b25d923346b // indirect
 )
