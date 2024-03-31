@@ -12,7 +12,7 @@ require (
 	github.com/aws/smithy-go v1.20.1
 	github.com/go-kit/log v0.2.1
 	github.com/prometheus/client_golang v1.19.0
-	github.com/prometheus/common v0.51.0
+	github.com/prometheus/common v0.51.1
 	github.com/prometheus/exporter-toolkit v0.11.0
 	github.com/prometheus/prometheus v0.51.0
 )
