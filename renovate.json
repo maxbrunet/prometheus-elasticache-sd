@@ -10,107 +10,60 @@
     ":semanticCommitScope(deps)",
     "customManagers:dockerfileVersions"
   ],
-  "assignees": [
-    "maxbrunet"
-  ],
+  "assignees": ["maxbrunet"],
   "internalChecksFilter": "strict",
   "platformAutomerge": true,
-  "postUpdateOptions": [
-    "gomodTidy",
-    "gomodUpdateImportPaths"
-  ],
+  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
   "packageRules": [
     {
       "description": "One week stability period for Go packages",
-      "matchDatasources": [
-        "go"
-      ],
+      "matchDatasources": ["go"],
       "minimumReleaseAge": "7 days"
     },
     {
       "description": "Bump minimum Go version",
-      "matchManagers": [
-        "gomod"
-      ],
-      "matchDepTypes": [
-        "golang"
-      ],
+      "matchManagers": ["gomod"],
+      "matchDepTypes": ["golang"],
       "rangeStrategy": "replace"
     },
     {
       "description": "Group Go updates",
-      "matchDatasources": [
-        "docker",
-        "golang-version"
-      ],
-      "matchPackageNames": [
-        "go",
-        "golang"
-      ],
-      "matchPackagePatterns": [
-        "/golang$"
-      ],
+      "matchDatasources": ["docker", "golang-version"],
+      "matchPackageNames": ["go", "golang"],
+      "matchPackagePatterns": ["/golang$"],
       "commitMessageTopic": "Go",
       "groupName": "go"
     },
     {
       "description": "Group packages from aws-sdk-go-v2 monorepo together",
-      "matchSourceUrlPrefixes": [
-        "https://github.com/aws/aws-sdk-go-v2"
-      ],
-      "matchUpdateTypes": [
-        "digest",
-        "patch",
-        "minor",
-        "major"
-      ],
+      "matchSourceUrlPrefixes": ["https://github.com/aws/aws-sdk-go-v2"],
+      "matchUpdateTypes": ["digest", "patch", "minor", "major"],
       "groupName": "aws-sdk-go-v2 monorepo"
     },
     {
       "description": "Exclude retracted Prometheus versions: https://github.com/renovatebot/renovate/issues/13012",
-      "matchPackageNames": [
-        "github.com/prometheus/prometheus"
-      ],
+      "matchPackageNames": ["github.com/prometheus/prometheus"],
       "allowedVersions": "<1"
     },
     {
       "description": "Disable pinning podman image digest",
-      "matchManagers": [
-        "github-actions"
-      ],
-      "matchDepTypes": [
-        "container"
-      ],
-      "matchPackageNames": [
-        "quay.io/containers/podman"
-      ],
+      "matchManagers": ["github-actions"],
+      "matchDepTypes": ["container"],
+      "matchPackageNames": ["quay.io/containers/podman"],
       "pinDigests": false
     },
     {
-      "matchDepTypes": [
-        "require"
-      ],
+      "matchDepTypes": ["require"],
       "semanticCommitType": "build"
     },
     {
-      "matchPackageNames": [
-        "go",
-        "golang"
-      ],
-      "matchPackagePatterns": [
-        "/golang$"
-      ],
-      "matchUpdateTypes": [
-        "patch",
-        "minor",
-        "major"
-      ],
+      "matchPackageNames": ["go", "golang"],
+      "matchPackagePatterns": ["/golang$"],
+      "matchUpdateTypes": ["patch", "minor", "major"],
       "semanticCommitType": "build"
     },
     {
-      "matchPackageNames": [
-        "quay.io/prometheus/busybox"
-      ],
+      "matchPackageNames": ["quay.io/prometheus/busybox"],
       "semanticCommitType": "build"
     }
   ],
@@ -118,9 +71,7 @@
     {
       "description": "Update version keys in YAML files",
       "customType": "regex",
-      "fileMatch": [
-        "(^|/).*.ya?ml$"
-      ],
+      "fileMatch": ["(^|/).*.ya?ml$"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?\\s*[\\w-_]*version: (?<currentValue>.*?)\\s"
       ]
@@ -128,24 +79,16 @@
     {
       "description": "Update Golang in .go-version file",
       "customType": "regex",
-      "fileMatch": [
-        "(^|/)\\.go-version$"
-      ],
-      "matchStrings": [
-        "^\\s*(?<currentValue>.+?)\\s*$"
-      ],
+      "fileMatch": ["(^|/)\\.go-version$"],
+      "matchStrings": ["^\\s*(?<currentValue>.+?)\\s*$"],
       "depNameTemplate": "go",
       "datasourceTemplate": "golang-version"
     },
     {
       "description": "Update semantic-release plugins",
       "customType": "regex",
-      "fileMatch": [
-        "^\\.github/workflows/build\\.yml$"
-      ],
-      "matchStrings": [
-        "\\s{12}(?<depName>\\S+?)@(?<currentValue>.+?)\\s"
-      ],
+      "fileMatch": ["^\\.github/workflows/build\\.yml$"],
+      "matchStrings": ["\\s{12}(?<depName>\\S+?)@(?<currentValue>.+?)\\s"],
       "datasourceTemplate": "npm"
     }
   ]
