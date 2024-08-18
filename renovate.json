@@ -29,14 +29,13 @@
     {
       "description": "Group Go updates",
       "matchDatasources": ["docker", "golang-version"],
-      "matchPackageNames": ["go", "golang"],
-      "matchPackagePatterns": ["/golang$"],
+      "matchPackageNames": ["go", "golang", "//golang$/"],
       "commitMessageTopic": "Go",
       "groupName": "go"
     },
     {
       "description": "Group packages from aws-sdk-go-v2 monorepo together",
-      "matchSourceUrlPrefixes": ["https://github.com/aws/aws-sdk-go-v2"],
+      "matchSourceUrls": ["https://github.com/aws/aws-sdk-go-v2{/,}**"],
       "matchUpdateTypes": ["digest", "patch", "minor", "major"],
       "groupName": "aws-sdk-go-v2 monorepo"
     },
@@ -57,8 +56,7 @@
       "semanticCommitType": "build"
     },
     {
-      "matchPackageNames": ["go", "golang"],
-      "matchPackagePatterns": ["/golang$"],
+      "matchPackageNames": ["go", "golang", "//golang$/"],
       "matchUpdateTypes": ["patch", "minor", "major"],
       "semanticCommitType": "build"
     },
