@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.334](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.333...v1.0.334) (2024-09-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update github/codeql-action action to v3.26.7 ([#800](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/800)) ([abb59ab](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/abb59abeab01051a09d42815aa5d504fcce2699a))
+
+
+### Build System
+
+* **deps:** update go to v1.23.1 ([#794](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/794)) ([5a67a9a](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/5a67a9a5e83d9aec726c7d8c380552bce5c160b2))
+
 ## [1.0.333](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.332...v1.0.333) (2024-09-12)
 
 
