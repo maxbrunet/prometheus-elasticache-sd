@@ -11,7 +11,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/credentials v1.17.37
 	github.com/aws/aws-sdk-go-v2/service/elasticache v1.41.3
 	github.com/aws/aws-sdk-go-v2/service/sts v1.31.3
-	github.com/aws/smithy-go v1.21.0
+	github.com/aws/smithy-go v1.22.0
 	github.com/go-kit/log v0.2.1
 	github.com/prometheus/client_golang v1.20.4
 	github.com/prometheus/common v0.60.0
