@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.351](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.350...v1.0.351) (2024-10-22)
+
+
+### Build System
+
+* **deps:** update module github.com/prometheus/client_golang to v1.20.5 ([#830](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/830)) ([b86d368](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b86d3683a7ca461048355fe8f2322e7c82d79523))
+
 ## [1.0.350](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.349...v1.0.350) (2024-10-15)
 
 
