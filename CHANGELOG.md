@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.355](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.354...v1.0.355) (2024-11-02)
+
+### Miscellaneous Chores
+
+* **deps:** update quay.io/containers/podman docker tag to v5.2.5 ([#838](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/838)) ([9825a99](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9825a99e002c10ac2654505203c86211c1e315a4))
+
+### Build System
+
+* build project with GoReleaser and Ko ([#839](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/839)) ([33cf1b4](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/33cf1b46f8dd85c13c259f4a4dc8b378779efc46))
+
 ## [1.0.354](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.353...v1.0.354) (2024-10-29)
 
 
