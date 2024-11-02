@@ -87,8 +87,16 @@ see its [README](https://github.com/prometheus/memcached_exporter#multi-target) 
 
 ### Build
 
+Binary:
+
 ```
-docker build -t prometheus-elasticache-sd .
+go build .
+```
+
+Container image with [ko](https://ko.build):
+
+```
+ko build --base-import-paths --local .
 ```
 
 ### Test

@@ -4,11 +4,9 @@
     "config:best-practices",
     ":automergeDigest",
     ":automergeMinor",
-    ":maintainLockFilesMonthly",
     ":rebaseStalePrs",
     ":semanticCommits",
-    ":semanticCommitScope(deps)",
-    "customManagers:dockerfileVersions"
+    ":semanticCommitScope(deps)"
   ],
   "assignees": ["maxbrunet"],
   "internalChecksFilter": "strict",
@@ -27,13 +25,6 @@
       "rangeStrategy": "replace"
     },
     {
-      "description": "Group Go updates",
-      "matchDatasources": ["docker", "golang-version"],
-      "matchPackageNames": ["go", "golang", "//golang$/"],
-      "commitMessageTopic": "Go",
-      "groupName": "go"
-    },
-    {
       "description": "Group packages from aws-sdk-go-v2 monorepo together",
       "matchSourceUrls": ["https://github.com/aws/aws-sdk-go-v2{/,}**"],
       "matchUpdateTypes": ["digest", "patch", "minor", "major"],
@@ -45,18 +36,17 @@
       "allowedVersions": "<1"
     },
     {
-      "description": "Disable pinning podman image digest",
-      "matchManagers": ["github-actions"],
-      "matchDepTypes": ["container"],
-      "matchPackageNames": ["quay.io/containers/podman"],
-      "pinDigests": false
+      "description": "Customize golang updates commit message",
+      "matchDatasources": ["golang-version"],
+      "matchPackageNames": ["go"],
+      "commitMessageTopic": "Go"
     },
     {
       "matchDepTypes": ["require"],
       "semanticCommitType": "build"
     },
     {
-      "matchPackageNames": ["go", "golang", "//golang$/"],
+      "matchPackageNames": ["go"],
       "matchUpdateTypes": ["patch", "minor", "major"],
       "semanticCommitType": "build"
     },
@@ -73,6 +63,16 @@
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?\\s*[\\w-_]*version: (?<currentValue>.*?)\\s"
       ]
+    },
+    {
+      "description": "Update base image in .goreleaser.yml",
+      "customType": "regex",
+      "fileMatch": ["(^|/)\\.goreleaser\\.ya?ml$"],
+      "matchStrings": [
+        "base_image:\\s+[\"']?(?<depName>\\S+?)(?::(?<currentValue>\\S+?))?(?:@(?<currentDigest>sha256:\\S+))?[\"']?\\s"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
     },
     {
       "description": "Update Golang in .go-version file",

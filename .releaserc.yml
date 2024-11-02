@@ -24,18 +24,7 @@ plugins:
 
         ${nextRelease.notes}
   - - "@semantic-release/exec"
-    - publishCmd: |
-        set -e
-
-        IMAGE_NAME='ghcr.io/maxbrunet/prometheus-elasticache-sd'
-        IMAGE_TAG='v${nextRelease.version}'
-
-        podman build \
-          --platform linux/amd64,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x \
-          --manifest "$IMAGE_NAME:$IMAGE_TAG" .
-
-        podman manifest push "$IMAGE_NAME:$IMAGE_TAG" "docker://$IMAGE_NAME:$IMAGE_TAG"
-        podman manifest push "$IMAGE_NAME:$IMAGE_TAG" "docker://$IMAGE_NAME:latest"
+    - publishCmd: goreleaser release --clean
 preset: conventionalcommits
 presetConfig:
   types:
