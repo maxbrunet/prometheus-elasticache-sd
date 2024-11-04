@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.356](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.355...v1.0.356) (2024-11-04)
+
+### Miscellaneous Chores
+
+* add dist directory to .gitignore ([#841](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/841)) ([1eead91](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/1eead91f3be153caeddf537a0c2b141b1b3981bb))
+* **deps:** update sigstore/cosign-installer action to v3.7.0 ([#840](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/840)) ([0a039cd](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/0a039cde80d144b8d4eac48e812db541ea209915))
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#842](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/842)) ([89e8023](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/89e8023282c4243b6ba1abafbd390d73d709fa3b))
+
 ## [1.0.355](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.354...v1.0.355) (2024-11-02)
 
 ### Miscellaneous Chores
