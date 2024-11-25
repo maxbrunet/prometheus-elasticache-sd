@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.363](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.362...v1.0.363) (2024-11-25)
+
+### Miscellaneous Chores
+
+* **deps:** update module github.com/goreleaser/goreleaser to v2.4.6 ([#861](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/861)) ([a21c3cf](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/a21c3cf029912b5ee44d5863b4aed4db14dbfe14))
+* **deps:** update module github.com/goreleaser/goreleaser to v2.4.7 ([#862](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/862)) ([8e358e7](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/8e358e7bda242a9f9bae952fd4a4b3eb5f706abe))
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#863](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/863)) ([eb86c50](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/eb86c501dd61972cc3838e286c690afb85584a8c))
+
 ## [1.0.362](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.361...v1.0.362) (2024-11-22)
 
 ### Build System
