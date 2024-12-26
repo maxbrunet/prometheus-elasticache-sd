@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.367](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.366...v1.0.367) (2024-12-26)
+
+### Miscellaneous Chores
+
+* **deps:** update actions/setup-go action to v5.2.0 ([#871](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/871)) ([ca9fcfb](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ca9fcfb08ce8ab7bcdd72b6aebef1e16c8c8465a))
+* **deps:** update github/codeql-action action to v3.27.7 ([#870](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/870)) ([c843166](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c843166ef659d937dd45604aab21961522c0097c))
+* **deps:** update github/codeql-action action to v3.27.8 ([#873](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/873)) ([ac13d57](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ac13d5756aad05e8dc980e5ff7ba709a972e83c5))
+* **deps:** update github/codeql-action action to v3.27.9 ([#874](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/874)) ([57f461c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/57f461c8e6c9679a36a5f064e546ed90d903d2fe))
+* **deps:** update github/codeql-action action to v3.28.0 ([#875](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/875)) ([5791991](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/5791991ff14186b496d95d43363a291f22f3fe78))
+* **deps:** update module github.com/goreleaser/goreleaser to v2.5.0 ([#876](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/876)) ([76fb5bf](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/76fb5bf28292882d1e206c6a0a2bea3ecb0cd493))
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#877](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/877)) ([4dd2c38](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4dd2c3854ee24a7154aa160ab996c402868fe263))
+
 ## [1.0.366](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.365...v1.0.366) (2024-12-09)
 
 ### Build System
