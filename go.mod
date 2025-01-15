@@ -7,10 +7,10 @@ toolchain go1.23.4
 require (
 	github.com/alecthomas/kingpin/v2 v2.4.0
 	github.com/aws/aws-sdk-go-v2 v1.32.7
-	github.com/aws/aws-sdk-go-v2/config v1.28.7
-	github.com/aws/aws-sdk-go-v2/credentials v1.17.48
-	github.com/aws/aws-sdk-go-v2/service/elasticache v1.44.2
-	github.com/aws/aws-sdk-go-v2/service/sts v1.33.3
+	github.com/aws/aws-sdk-go-v2/config v1.28.8
+	github.com/aws/aws-sdk-go-v2/credentials v1.17.49
+	github.com/aws/aws-sdk-go-v2/service/elasticache v1.44.3
+	github.com/aws/aws-sdk-go-v2/service/sts v1.33.4
 	github.com/aws/smithy-go v1.22.1
 	github.com/go-kit/log v0.2.1
 	github.com/prometheus/client_golang v1.20.5
