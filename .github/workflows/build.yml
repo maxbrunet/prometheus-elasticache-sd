@@ -17,7 +17,13 @@ concurrency:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        runs-on:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+
+    runs-on: ${{ matrix.runs-on }}
 
     timeout-minutes: 10
 
@@ -36,7 +42,7 @@ jobs:
         run: go test -v ./...
 
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     timeout-minutes: 10
 
@@ -58,7 +64,7 @@ jobs:
           version: v1.63.4
 
   codeql-analyze:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       security-events: write
 
@@ -87,7 +93,7 @@ jobs:
         uses: github/codeql-action/analyze@b6a472f63d85b9c78a3ac5e89422239fc15e9b3c # v3.28.1
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     timeout-minutes: 10
 
@@ -112,7 +118,7 @@ jobs:
 
   semantic-release:
     needs: [codeql-analyze, build, lint, test]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
       id-token: write
