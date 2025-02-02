@@ -34,6 +34,11 @@ issues:
   # default exclusions here and add exclusions fitting our codebase
   # further down.
   exclude-use-default: false
+  exclude-rules:
+    - linters:
+        - errcheck
+      # Taken from the default exclusions (that are otherwise disabled above).
+      text: Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*print(f|ln)?|os\.(Un)?Setenv). is not checked
 
 linters-settings:
   errcheck:
