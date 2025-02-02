@@ -11,6 +11,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Prometheus Service Discovery for AWS ElastiCache
 package main
 
 import (
@@ -19,6 +20,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/alecthomas/kingpin/v2"
@@ -123,7 +125,7 @@ type ElasticacheDiscovery struct {
 func NewElasticacheDiscovery(conf *ElasticacheSDConfig, logger log.Logger, metrics discovery.DiscovererMetrics) (*ElasticacheDiscovery, error) {
 	m, ok := metrics.(*elasticacheMetrics)
 	if !ok {
-		return nil, fmt.Errorf("invalid discovery metrics type")
+		return nil, errors.New("invalid discovery metrics type")
 	}
 
 	if logger == nil {
@@ -139,7 +141,7 @@ func NewElasticacheDiscovery(conf *ElasticacheSDConfig, logger log.Logger, metri
 		refresh.Options{
 			Logger:              logger,
 			Mech:                "elasticache",
-			Interval:            time.Duration(d.cfg.RefreshInterval),
+			Interval:            d.cfg.RefreshInterval,
 			RefreshF:            d.refresh,
 			MetricsInstantiator: m.refreshMetrics,
 		},
@@ -258,7 +260,7 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 				nodeLabels[model.LabelName(ecLabelCacheNodeStatus)] = model.LabelValue(*cn.CacheNodeStatus)
 				nodeLabels[model.LabelName(ecLabelCustomerAZ)] = model.LabelValue(*cn.CustomerAvailabilityZone)
 				nodeLabels[model.LabelName(ecLabelEndpointAddress)] = model.LabelValue(*cn.Endpoint.Address)
-				nodeLabels[model.LabelName(ecLabelEndpointPort)] = model.LabelValue(fmt.Sprintf("%d", *cn.Endpoint.Port))
+				nodeLabels[model.LabelName(ecLabelEndpointPort)] = model.LabelValue(strconv.Itoa(int(*cn.Endpoint.Port)))
 
 				// Placeholder address
 				nodeLabels[model.AddressLabel] = model.LabelValue("undefined")

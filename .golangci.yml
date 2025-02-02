@@ -1,10 +1,40 @@
 run:
   timeout: 2m
+
+output:
+  sort-results: true
+
 linters:
   enable:
+    - errorlint
+    - exptostd
+    - gocritic
+    - godot
     - gofumpt
     - goimports
+    - loggercheck
+    - misspell
+    - nilnesserr
+    - nolintlint
+    - perfsprint
+    - predeclared
     - revive
+    - sloglint
+    - testifylint
+    - unconvert
+    - unused
+    - usestdlibvars
+    - whitespace
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  # The default exclusions are too aggressive. For one, they
+  # essentially disable any linting on doc comments. We disable
+  # default exclusions here and add exclusions fitting our codebase
+  # further down.
+  exclude-use-default: false
+
 linters-settings:
   errcheck:
     exclude-functions:
