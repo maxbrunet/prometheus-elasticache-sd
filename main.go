@@ -258,7 +258,7 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 				nodeLabels[model.LabelName(ecLabelCacheNodeStatus)] = model.LabelValue(*cn.CacheNodeStatus)
 				nodeLabels[model.LabelName(ecLabelCustomerAZ)] = model.LabelValue(*cn.CustomerAvailabilityZone)
 				nodeLabels[model.LabelName(ecLabelEndpointAddress)] = model.LabelValue(*cn.Endpoint.Address)
-				nodeLabels[model.LabelName(ecLabelEndpointPort)] = model.LabelValue(fmt.Sprintf("%d", cn.Endpoint.Port))
+				nodeLabels[model.LabelName(ecLabelEndpointPort)] = model.LabelValue(fmt.Sprintf("%d", *cn.Endpoint.Port))
 
 				// Placeholder address
 				nodeLabels[model.AddressLabel] = model.LabelValue("undefined")
