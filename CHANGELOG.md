@@ -7,9 +7,8 @@ All notable changes to this project will be documented in this file.
 ### ⚠ BREAKING CHANGES
 
 * release v2 coinciding with Prometheus v3 (#914)
-* **image:** The image now runs as `nobody` by default for consistency with
-the rest of the Prometheus ecosystem.
-* **deps:** update module github.com/prometheus/prometheus to v0.301.0 (#912)
+* **image:** The image now runs as `nobody` by default for consistency with the rest of the Prometheus ecosystem.
+* **logging**: the format of log lines has changed a little, along with the adoption of Go's Structured Logging package.
 
 ### Features
 
