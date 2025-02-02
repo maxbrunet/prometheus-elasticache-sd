@@ -18,6 +18,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log/slog"
 	"net/http"
 	"os"
 	"strconv"
@@ -32,14 +33,12 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/elasticache/types"
 	"github.com/aws/aws-sdk-go-v2/service/sts"
 	"github.com/aws/smithy-go"
-	"github.com/go-kit/log"
-	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	versioncollector "github.com/prometheus/client_golang/prometheus/collectors/version"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/common/model"
-	"github.com/prometheus/common/promlog"
-	"github.com/prometheus/common/promlog/flag"
+	"github.com/prometheus/common/promslog"
+	"github.com/prometheus/common/promslog/flag"
 	"github.com/prometheus/common/version"
 	"github.com/prometheus/exporter-toolkit/web"
 	webflag "github.com/prometheus/exporter-toolkit/web/kingpinflag"
@@ -114,7 +113,7 @@ func (*ElasticacheSDConfig) NewDiscovererMetrics(_ prometheus.Registerer, rmi di
 // the Prometheus Discoverer interface.
 type ElasticacheDiscovery struct {
 	*refresh.Discovery
-	logger      log.Logger
+	logger      *slog.Logger
 	cfg         *ElasticacheSDConfig
 	elasticache *elasticache.Client
 	lasts       map[string]struct{}
@@ -122,14 +121,14 @@ type ElasticacheDiscovery struct {
 }
 
 // NewElasticacheDiscovery returns a new ElasticacheDiscovery which periodically refreshes its targets.
-func NewElasticacheDiscovery(conf *ElasticacheSDConfig, logger log.Logger, metrics discovery.DiscovererMetrics) (*ElasticacheDiscovery, error) {
+func NewElasticacheDiscovery(conf *ElasticacheSDConfig, logger *slog.Logger, metrics discovery.DiscovererMetrics) (*ElasticacheDiscovery, error) {
 	m, ok := metrics.(*elasticacheMetrics)
 	if !ok {
 		return nil, errors.New("invalid discovery metrics type")
 	}
 
 	if logger == nil {
-		logger = log.NewNopLogger()
+		logger = promslog.NewNopLogger()
 	}
 
 	d := &ElasticacheDiscovery{
@@ -233,14 +232,14 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 				ResourceName: cc.ARN,
 			})
 			if err != nil {
-				level.Warn(d.logger).Log("msg", "could not list tags", "err", err.Error(), "ARN", *cc.ARN, "status", *cc.CacheClusterStatus)
+				d.logger.Warn("could not list tags", "err", err.Error(), "ARN", *cc.ARN, "status", *cc.CacheClusterStatus)
 
 				// If a cache cluster is not in "available" status (e.g. "snapshotting"),
 				// its tags are unavailable, so if the relabeling logic depends on `__meta_elasticache_tag_<tagkey>` labels,
 				// the clusters may disappear from the Prometheus targets when that happens,
 				// thus we try to reuse the last tags we know about.
 				if _, ok := d.lastTags[*cc.ARN]; ok {
-					level.Warn(d.logger).Log("msg", "reusing last known tags", "ARN", *cc.ARN)
+					d.logger.Warn("reusing last known tags", "ARN", *cc.ARN)
 					tags = d.lastTags[*cc.ARN]
 				}
 			} else {
@@ -266,7 +265,7 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 				nodeLabels[model.AddressLabel] = model.LabelValue("undefined")
 
 				source := fmt.Sprintf("%s/%s", *cc.ARN, *cn.CacheNodeId)
-				level.Debug(d.logger).Log("msg", "target added", "source", source)
+				d.logger.Debug("target added", "source", source)
 
 				current[source] = struct{}{}
 
@@ -288,7 +287,7 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 	// Add empty groups for target which have been removed since the last refresh.
 	for k := range d.lasts {
 		if _, ok := current[k]; !ok {
-			level.Debug(d.logger).Log("msg", "target deleted", "source", k)
+			d.logger.Debug("target deleted", "source", k)
 
 			tgs = append(tgs, &targetgroup.Group{Source: k})
 		}
@@ -315,17 +314,17 @@ func main() {
 		metricsPath                               = kingpin.Flag("web.telemetry-path", "Path under which to expose metrics.").Default("/metrics").String()
 	)
 
-	promlogConfig := &promlog.Config{}
+	promslogConfig := &promslog.Config{}
 
-	flag.AddFlags(kingpin.CommandLine, promlogConfig)
+	flag.AddFlags(kingpin.CommandLine, promslogConfig)
 	kingpin.Version(version.Print("prometheus-elasticache-sd"))
 	kingpin.HelpFlag.Short('h')
 	kingpin.Parse()
 
-	logger := promlog.New(promlogConfig)
+	logger := promslog.New(promslogConfig)
 
-	level.Info(logger).Log("msg", "Starting prometheus-elasticache-sd", "version", version.Info())
-	level.Info(logger).Log("msg", "Build context", "context", version.BuildContext())
+	logger.Info("Starting prometheus-elasticache-sd", "version", version.Info())
+	logger.Info("Build context", "context", version.BuildContext())
 
 	conf := &ElasticacheSDConfig{
 		Region:                                  *awsRegion,
@@ -343,13 +342,13 @@ func main() {
 	refreshMetrics := discovery.NewRefreshMetrics(reg)
 	metrics, err := discovery.RegisterSDMetrics(reg, refreshMetrics)
 	if err != nil {
-		level.Error(logger).Log("msg", "failed to register service discovery metrics", "err", err)
+		logger.Error("failed to register service discovery metrics", "err", err)
 		os.Exit(1)
 	}
 
 	discMetrics, ok := metrics[conf.Name()]
 	if !ok {
-		level.Error(logger).Log("msg", "discoverer metrics not registered")
+		logger.Error("discoverer metrics not registered")
 		os.Exit(1)
 	}
 
@@ -358,7 +357,7 @@ func main() {
 		Metrics: discMetrics,
 	})
 	if err != nil {
-		level.Error(logger).Log("msg", "failed to instantiate discoverer", "err", err)
+		logger.Error("failed to instantiate discoverer", "err", err)
 		os.Exit(1)
 	}
 	ctx := context.Background()
@@ -381,7 +380,7 @@ func main() {
 		},
 	})
 	if err != nil {
-		level.Error(logger).Log("msg", "Error instantiating landing page", "err", err)
+		logger.Error("Error instantiating landing page", "err", err)
 		os.Exit(1)
 	}
 	http.Handle("/", landingPage)
@@ -389,7 +388,7 @@ func main() {
 	srv := &http.Server{}
 
 	if err := web.ListenAndServe(srv, webConfig, logger); err != nil {
-		level.Error(logger).Log("msg", "Error starting HTTP server", "err", err)
+		logger.Error("Error starting HTTP server", "err", err)
 		os.Exit(1)
 	}
 }
