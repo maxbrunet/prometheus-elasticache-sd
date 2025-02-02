@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.377...v2.0.0) (2025-02-02)
+
+### ⚠ BREAKING CHANGES
+
+* release v2 coinciding with Prometheus v3 (#914)
+* **image:** The image now runs as `nobody` by default for consistency with
+the rest of the Prometheus ecosystem.
+* **deps:** update module github.com/prometheus/prometheus to v0.301.0 (#912)
+
+### Features
+
+* release v2 coinciding with Prometheus v3 ([#914](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/914)) ([4aa80be](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4aa80be5cf8781d893228cbddb54ff4574c944b2))
+
+### Miscellaneous Chores
+
+* **golangci-lint:** align configuration with Prometheus ([#910](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/910)) ([0310a7e](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/0310a7e3ef3cfb9a70f66bc63c836e0b24729f46))
+* **golangci-lint:** exclude some errcheck again ([#911](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/911)) ([4af98e1](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4af98e1af4fbeedd9b4f1c18701803195af5e8ac))
+* **release:** v1.0.378 [skip ci] ([f0dba79](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f0dba7954efabd96360dbc561745297f6c795ab2)), closes [#912](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/912) [#910](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/910) [#911](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/911) [#872](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/872) [#912](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/912) [#913](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/913)
+
+### Build System
+
+* **deps:** update module github.com/prometheus/common to v0.62.0 ([#872](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/872)) ([c77eb06](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c77eb063284c498d02270329b92236716a281d07))
+* **deps:** update module github.com/prometheus/prometheus to v0.301.0 ([#912](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/912)) ([f7b8699](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f7b86995fb57fcc49389ee860f287e2fd2aa14e5))
+* **image:** run as nobody ([#913](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/913)) ([ad80bcb](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ad80bcbd5a6b55141bccba21eb9c3cb5ac8f9325))
+
 ## [1.0.377](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.376...v1.0.377) (2025-02-02)
 
 ### Bug Fixes
