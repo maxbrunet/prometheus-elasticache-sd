@@ -74,7 +74,8 @@ archives:
     name_template: '{{ .ProjectName }}-{{ .Version }}.{{ .Os }}-{{ .Arch }}{{
       if .Arm }}v{{ .Arm }}{{ end }}{{ if and .Mips (ne .Mips "hardfloat") }}-{{
       .Mips }}{{ end }}'
-    format: tar.gz
+    formats:
+      - tar.gz
     files:
       - LICENSE
       - NOTICE
@@ -82,12 +83,14 @@ archives:
     id: zip
     builds:
       - windows
-    format: zip
+    formats:
+      - zip
 checksum:
   name_template: sha256sums.txt
 kos:
   - id: default
-    repository: ghcr.io/maxbrunet/prometheus-elasticache-sd
+    repositories:
+      - ghcr.io/maxbrunet/prometheus-elasticache-sd
     bare: true
     tags:
       - '{{ .Tag }}'
