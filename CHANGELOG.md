@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.377](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.376...v1.0.377) (2025-02-02)
+
+### Bug Fixes
+
+* fix sneaky breaking change where endpoint port became a pointer ([#909](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/909)) ([e514e81](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e514e817369e73d0e9b46f7f32f1aff787f70c1e))
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @semantic-release/exec to v7 ([#908](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/908)) ([fafaeef](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/fafaeef7984b2f100b6f8dc1ebb90ebc6c88a488))
+
 ## [1.0.376](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v1.0.375...v1.0.376) (2025-02-01)
 
 ### Miscellaneous Chores
