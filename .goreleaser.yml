@@ -99,7 +99,7 @@ kos:
       org.opencontainers.image.licenses: Apache-2.0
       org.opencontainers.image.source: https://github.com/maxbrunet/prometheus-elasticache-sd
       org.opencontainers.image.url: https://github.com/maxbrunet/prometheus-elasticache-sd
-    user: 1000:1000
+    user: nobody
     platforms:
       - linux/amd64
       - linux/arm/v7
