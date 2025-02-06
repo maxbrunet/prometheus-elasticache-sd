@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.2](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.1...v2.0.2) (2025-02-06)
+
+### Miscellaneous Chores
+
+* **deps:** update sigstore/cosign-installer action to v3.8.0 ([#920](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/920)) ([fc7d222](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/fc7d222b0ca136347460daeb8e0a99f02ff65222))
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#921](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/921)) ([8632c05](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/8632c053e50eb8d40c4fa778a01cef04710d6170))
+
 ## [2.0.1](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.0...v2.0.1) (2025-02-04)
 
 ### Documentation
