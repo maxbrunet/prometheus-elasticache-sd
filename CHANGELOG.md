@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.7](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.6...v2.0.7) (2025-02-19)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency semantic-release to v24.2.3 ([#936](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/936)) ([4cd57b7](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4cd57b794a652ec98ec8b8780d45b0b19cebe1b7))
+* **deps:** update golangci/golangci-lint-action action to v6.3.3 ([#932](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/932)) ([f30ee6e](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f30ee6ecb68307185d3a0011c313e0286b1615ee))
+* **deps:** update golangci/golangci-lint-action action to v6.4.0 ([#933](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/933)) ([cde59a7](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/cde59a7cfb9f6a31829fc1ca85ccb6841d3a1e24))
+* **deps:** update golangci/golangci-lint-action action to v6.4.1 ([#934](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/934)) ([b5a5911](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b5a5911992fa134ede034cb4d356b30cb0ed205c))
+* **deps:** update golangci/golangci-lint-action action to v6.5.0 ([#935](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/935)) ([2bf7e45](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/2bf7e45334658ea0ecd48a1b38cf26c6f6cd3a48))
+* **deps:** update module github.com/golangci/golangci-lint to v1.64.2 ([#938](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/938)) ([8950406](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/89504068e8bc0706f988f3cb8acba74be81cb0b3))
+* **deps:** update module github.com/goreleaser/goreleaser to v2.7.0 ([#937](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/937)) ([abfd979](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/abfd97944bf1cab79b6a7858d75b41d9eb5e8f61))
+
+### Build System
+
+* **deps:** update go to v1.24.0 ([#929](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/929)) ([eb094fe](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/eb094fe89f7a1bf512bde4e14bd3220dbf622cc5))
+
 ## [2.0.6](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.5...v2.0.6) (2025-02-13)
 
 ### Build System
