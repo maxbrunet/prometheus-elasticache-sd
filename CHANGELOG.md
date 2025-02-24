@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.8](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.7...v2.0.8) (2025-02-24)
+
+### Miscellaneous Chores
+
+* **deps:** update github/codeql-action action to v3.28.10 ([#943](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/943)) ([e4e3e2f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e4e3e2f68c3d1f4bdf8aebfd4429e770539f467b))
+* **deps:** update module github.com/golangci/golangci-lint to v1.64.3 ([#939](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/939)) ([28a6acd](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/28a6acddd8fc519de06ee6deb026a292d7be907d))
+* **deps:** update module github.com/golangci/golangci-lint to v1.64.4 ([#940](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/940)) ([38b85f4](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/38b85f4a9b9ee8ed5b5bac56a1d3a281ffe08b51))
+* **deps:** update module github.com/golangci/golangci-lint to v1.64.5 ([#942](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/942)) ([7a410e5](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/7a410e579deb49fc124199b70d4434593f217314))
+* **deps:** update sigstore/cosign-installer action to v3.8.1 ([#941](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/941)) ([eaa2837](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/eaa283700e00dfdee517a47965261e74dbe26abd))
+
+### Build System
+
+* **deps:** update module github.com/prometheus/client_golang to v1.21.0 ([#944](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/944)) ([6e1ddfc](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6e1ddfc75eca2cb874aab19514cd81d9bc8420bf))
+
 ## [2.0.7](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.6...v2.0.7) (2025-02-19)
 
 ### Miscellaneous Chores
