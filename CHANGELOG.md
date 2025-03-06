@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.14](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.13...v2.0.14) (2025-03-06)
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#951](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/951)) ([f361e21](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f361e2148d9e2c69a0785a371f19a3f24b9d759b))
+
 ## [2.0.13](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.12...v2.0.13) (2025-03-04)
 
 ### Build System
