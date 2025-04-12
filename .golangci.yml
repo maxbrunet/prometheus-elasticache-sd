@@ -1,17 +1,10 @@
-run:
-  timeout: 2m
-
-output:
-  sort-results: true
-
+version: "2"
 linters:
   enable:
     - errorlint
     - exptostd
     - gocritic
     - godot
-    - gofumpt
-    - goimports
     - loggercheck
     - misspell
     - nilnesserr
@@ -25,29 +18,35 @@ linters:
     - unused
     - usestdlibvars
     - whitespace
-
+  settings:
+    errcheck:
+      exclude-functions:
+        # Never check for logger errors.
+        - (github.com/go-kit/log.Logger).Log
+        # Used in HTTP handlers, any error is handled by the server itself.
+        - (net/http.ResponseWriter).Write
+  exclusions:
+    generated: lax
+    rules:
+      - linters:
+          - errcheck
+        text: Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*print(f|ln)?|os\.(Un)?Setenv). is not checked
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofumpt
+  settings:
+    gci:
+      sections:
+        - standard
+        - default
+        - prefix(github.com/maxbrunet/prometheus-elasticache-sd)
+    gofumpt:
+      extra-rules: true
 issues:
   max-issues-per-linter: 0
   max-same-issues: 0
-  # The default exclusions are too aggressive. For one, they
-  # essentially disable any linting on doc comments. We disable
-  # default exclusions here and add exclusions fitting our codebase
-  # further down.
-  exclude-use-default: false
-  exclude-rules:
-    - linters:
-        - errcheck
-      # Taken from the default exclusions (that are otherwise disabled above).
-      text: Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*print(f|ln)?|os\.(Un)?Setenv). is not checked
-
-linters-settings:
-  errcheck:
-    exclude-functions:
-      # Never check for logger errors.
-      - (github.com/go-kit/log.Logger).Log
-      # Used in HTTP handlers, any error is handled by the server itself.
-      - (net/http.ResponseWriter).Write
-  gofumpt:
-    extra-rules: true
-  goimports:
-    local-prefixes: github.com/maxbrunet/prometheus-elasticache-sd
