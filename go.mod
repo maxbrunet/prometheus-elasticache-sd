@@ -15,7 +15,7 @@ require (
 	github.com/prometheus/client_golang v1.22.0
 	github.com/prometheus/common v0.63.0
 	github.com/prometheus/exporter-toolkit v0.14.0
-	github.com/prometheus/prometheus v0.303.0
+	github.com/prometheus/prometheus v0.303.1
 )
 
 require (
