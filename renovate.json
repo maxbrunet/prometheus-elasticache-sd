@@ -59,7 +59,7 @@
     {
       "description": "Update version keys in YAML files",
       "customType": "regex",
-      "fileMatch": ["(^|/).*.ya?ml$"],
+      "managerFilePatterns": ["/(^|/).*.ya?ml$/"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?\\s*[\\w-_]*version: (?<currentValue>.*?)\\s"
       ]
@@ -67,7 +67,7 @@
     {
       "description": "Update base image in .goreleaser.yml",
       "customType": "regex",
-      "fileMatch": ["(^|/)\\.goreleaser\\.ya?ml$"],
+      "managerFilePatterns": ["/(^|/)\\.goreleaser\\.ya?ml$/"],
       "matchStrings": [
         "base_image:\\s+[\"']?(?<depName>\\S+?)(?::(?<currentValue>\\S+?))?(?:@(?<currentDigest>sha256:\\S+))?[\"']?\\s"
       ],
@@ -77,7 +77,7 @@
     {
       "description": "Update Golang in .go-version file",
       "customType": "regex",
-      "fileMatch": ["(^|/)\\.go-version$"],
+      "managerFilePatterns": ["/(^|/)\\.go-version$/"],
       "matchStrings": ["^\\s*(?<currentValue>.+?)\\s*$"],
       "depNameTemplate": "go",
       "datasourceTemplate": "golang-version"
@@ -85,7 +85,7 @@
     {
       "description": "Update semantic-release plugins",
       "customType": "regex",
-      "fileMatch": ["^\\.github/workflows/build\\.yml$"],
+      "managerFilePatterns": ["/^\\.github/workflows/build\\.yml$/"],
       "matchStrings": ["\\s{12}(?<depName>\\S+?)@(?<currentValue>.+?)\\s"],
       "datasourceTemplate": "npm"
     }
