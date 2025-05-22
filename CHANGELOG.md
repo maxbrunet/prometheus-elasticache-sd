@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.29](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.28...v2.0.29) (2025-05-22)
+
+### Miscellaneous Chores
+
+* **config:** migrate renovate config ([#994](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/994)) ([4a55b07](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4a55b075bce030da8f3ef5916b5d46ccc49f2d82))
+* **deps:** update dependency @semantic-release/exec to v7.1.0 ([#997](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/997)) ([c938cf8](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c938cf8d0111897363744f53e3fbae035416c97a))
+* **deps:** update dependency semantic-release to v24.2.4 ([#1000](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1000)) ([b19fa52](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b19fa528a9458a4ca54dddd623d6aba4814855d2))
+* **deps:** update github/codeql-action action to v3.28.18 ([#999](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/999)) ([af57dc0](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/af57dc0a50655307a868e25c4787a9f7d1993c1a))
+* **deps:** update module github.com/golangci/golangci-lint to v2.1.6 ([#998](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/998)) ([9d88bb2](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9d88bb2c35a89b9739e1a03471e4c519e0d6243b))
+
+### Build System
+
+* **deps:** update module github.com/prometheus/common to v0.64.0 ([#1002](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1002)) ([e8107c3](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e8107c3d3f7f44146ad3d1e3abc6be158ac143f5))
+
 ## [2.0.28](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.27...v2.0.28) (2025-05-09)
 
 ### Miscellaneous Chores
