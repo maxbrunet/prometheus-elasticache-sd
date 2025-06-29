@@ -1,4 +1,4 @@
-module github.com/maxbrunet/prometheus-elasticache-sd
+module github.com/maxbrunet/prometheus-elasticache-sd/v2
 
 go 1.23.0
 
