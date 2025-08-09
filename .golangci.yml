@@ -26,11 +26,9 @@ linters:
         # Used in HTTP handlers, any error is handled by the server itself.
         - (net/http.ResponseWriter).Write
   exclusions:
-    generated: lax
-    rules:
-      - linters:
-          - errcheck
-        text: Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*print(f|ln)?|os\.(Un)?Setenv). is not checked
+    generated: strict
+    presets:
+      - std-error-handling
     paths:
       - third_party$
       - builtin$
