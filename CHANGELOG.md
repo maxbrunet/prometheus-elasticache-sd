@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.48](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.47...v2.0.48) (2025-08-11)
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v4.3.0 ([#1053](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1053)) ([b0ca980](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b0ca98069bdfc01e27f5d7fa6fc7d1f7c8696ff0))
+* **deps:** update actions/checkout action to v5 ([#1054](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1054)) ([25ddfce](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/25ddfce3865d9bf3920bc2ed9bb29350929dc6df))
+* **deps:** update github/codeql-action action to v3.29.6 ([#1048](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1048)) ([95de94c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/95de94cb29e11c66874d58fadb5f02bfaf4bc8b9))
+* **deps:** update github/codeql-action action to v3.29.7 ([#1049](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1049)) ([6a8fded](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6a8fdedd975435292959a491a670b2f74c06971b))
+* **deps:** update github/codeql-action action to v3.29.8 ([#1050](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1050)) ([b57f4ca](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b57f4caaa6f2efd88c18b658b333eeb7146f09c1))
+* **deps:** update module github.com/golangci/golangci-lint to v2.3.1 ([#1051](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1051)) ([bbd9737](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/bbd97375a6eae23b7526f00f8d02f3f199606e25))
+* **deps:** update module github.com/goreleaser/goreleaser to v2.11.2 ([#1047](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1047)) ([82849ce](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/82849ce7257a620aef28ed886a6b559fa3e5f2e8))
+* **golangci-lint:** use exclusion preset ([#1052](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1052)) ([0756b92](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/0756b9231b9f19faaa74c78971f852cfae23c2b9))
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#1055](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1055)) ([7c81b7a](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/7c81b7a1c6b8497758da13658c92fbe542ab2941))
+
 ## [2.0.47](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.46...v2.0.47) (2025-08-07)
 
 ### Build System
