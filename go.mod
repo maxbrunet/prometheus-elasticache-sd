@@ -1,6 +1,6 @@
 module github.com/maxbrunet/prometheus-elasticache-sd/v2
 
-go 1.23.0
+go 1.24
 
 toolchain go1.25.0
 

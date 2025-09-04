@@ -19,12 +19,6 @@
       "minimumReleaseAge": "7 days"
     },
     {
-      "description": "Bump minimum Go version",
-      "matchManagers": ["gomod"],
-      "matchDepTypes": ["golang"],
-      "rangeStrategy": "replace"
-    },
-    {
       "description": "Group packages from aws-sdk-go-v2 monorepo together",
       "matchSourceUrls": ["https://github.com/aws/aws-sdk-go-v2{/,}**"],
       "matchUpdateTypes": ["digest", "patch", "minor", "major"],
@@ -34,12 +28,6 @@
       "description": "Exclude retracted Prometheus versions: https://github.com/renovatebot/renovate/issues/13012",
       "matchPackageNames": ["github.com/prometheus/prometheus"],
       "allowedVersions": "<1"
-    },
-    {
-      "description": "Customize golang updates commit message",
-      "matchDatasources": ["golang-version"],
-      "matchPackageNames": ["go"],
-      "commitMessageTopic": "Go"
     },
     {
       "matchDepTypes": ["require"],
@@ -73,14 +61,6 @@
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
-    },
-    {
-      "description": "Update Golang in .go-version file",
-      "customType": "regex",
-      "managerFilePatterns": ["/(^|/)\\.go-version$/"],
-      "matchStrings": ["^\\s*(?<currentValue>.+?)\\s*$"],
-      "depNameTemplate": "go",
-      "datasourceTemplate": "golang-version"
     },
     {
       "description": "Update semantic-release plugins",
