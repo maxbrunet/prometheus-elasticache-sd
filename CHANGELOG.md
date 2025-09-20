@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.64](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.63...v2.0.64) (2025-09-20)
+
+### Bug Fixes
+
+* give a name and description to command line ([#1086](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1086)) ([efcd8ed](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/efcd8eda2ac03416c63789bc969e8175c3b66285))
+
+### Miscellaneous Chores
+
+* **deps:** update dependency semantic-release to v24.2.9 ([#1085](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1085)) ([d672045](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/d672045bf92da73f9ee28b53b922cf813c16ec3d))
+
 ## [2.0.63](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.62...v2.0.63) (2025-09-17)
 
 ### Build System
