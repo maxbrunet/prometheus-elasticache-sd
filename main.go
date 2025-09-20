@@ -301,25 +301,26 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 
 func main() {
 	var (
-		awsRegion                                 = kingpin.Flag("aws.region", "The AWS region. If not provided, the region from the default AWS credential chain is used.").String()
-		awsAccessKey                              = kingpin.Flag("aws.access-key", "The AWS Access Key. Must be provided with --aws.secret-key. If not provided, the credentials from the default AWS credential chain are used.").String()
-		awsSecretKey                              = kingpin.Flag("aws.secret-key", "The AWS Secret Key. Must be provided with --aws.access-key. If not provided, the credentials from the default AWS credential chain are used.").String()
-		awsProfile                                = kingpin.Flag("aws.profile", "Named AWS profile used to connect to the API.").String()
-		awsRoleARN                                = kingpin.Flag("aws.role-arn", "AWS Role ARN, an alternative to using AWS API keys.").String()
-		ecCacheClusterID                          = kingpin.Flag("elasticache.cache-cluster-id", "The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.").String()
-		ecShowCacheClustersNotInReplicationGroups = kingpin.Flag("elasticache.show-cache-clusters-not-in-replication-groups", "An optional flag that can be included in the DescribeCacheCluster request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this means single node Redis clusters.").Bool()
-		targetRefreshInterval                     = kingpin.Flag("target.refresh-interval", "Refresh interval to re-read the cluster list.").Default("60s").Duration()
-		outputFile                                = kingpin.Flag("output.file", "The output filename for file_sd compatible file.").Default("elasticache.json").String()
-		webConfig                                 = webflag.AddFlags(kingpin.CommandLine, ":8888")
-		metricsPath                               = kingpin.Flag("web.telemetry-path", "Path under which to expose metrics.").Default("/metrics").String()
+		app                                       = kingpin.New("prometheus-elasticache-sd", "Prometheus ElastiCache Service Discovery")
+		awsRegion                                 = app.Flag("aws.region", "The AWS region. If not provided, the region from the default AWS credential chain is used.").String()
+		awsAccessKey                              = app.Flag("aws.access-key", "The AWS Access Key. Must be provided with --aws.secret-key. If not provided, the credentials from the default AWS credential chain are used.").String()
+		awsSecretKey                              = app.Flag("aws.secret-key", "The AWS Secret Key. Must be provided with --aws.access-key. If not provided, the credentials from the default AWS credential chain are used.").String()
+		awsProfile                                = app.Flag("aws.profile", "Named AWS profile used to connect to the API.").String()
+		awsRoleARN                                = app.Flag("aws.role-arn", "AWS Role ARN, an alternative to using AWS API keys.").String()
+		ecCacheClusterID                          = app.Flag("elasticache.cache-cluster-id", "The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.").String()
+		ecShowCacheClustersNotInReplicationGroups = app.Flag("elasticache.show-cache-clusters-not-in-replication-groups", "An optional flag that can be included in the DescribeCacheCluster request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this means single node Redis clusters.").Bool()
+		targetRefreshInterval                     = app.Flag("target.refresh-interval", "Refresh interval to re-read the cluster list.").Default("60s").Duration()
+		outputFile                                = app.Flag("output.file", "The output filename for file_sd compatible file.").Default("elasticache.json").String()
+		webConfig                                 = webflag.AddFlags(app, ":8888")
+		metricsPath                               = app.Flag("web.telemetry-path", "Path under which to expose metrics.").Default("/metrics").String()
 	)
 
 	promslogConfig := &promslog.Config{}
 
-	flag.AddFlags(kingpin.CommandLine, promslogConfig)
-	kingpin.Version(version.Print("prometheus-elasticache-sd"))
-	kingpin.HelpFlag.Short('h')
-	kingpin.Parse()
+	flag.AddFlags(app, promslogConfig)
+	app.Version(version.Print(app.Name))
+	app.HelpFlag.Short('h')
+	kingpin.MustParse(app.Parse(os.Args[1:]))
 
 	logger := promslog.New(promslogConfig)
 
