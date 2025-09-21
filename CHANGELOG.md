@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.65](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.64...v2.0.65) (2025-09-21)
+
+### Bug Fixes
+
+* add pprof HTTP endpoints and fix discovery metrics ([#1087](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1087)) ([08ab769](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/08ab769c4e538379628337f6ec9d1ea49182a6c0))
+
 ## [2.0.64](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.63...v2.0.64) (2025-09-20)
 
 ### Bug Fixes
