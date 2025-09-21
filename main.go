@@ -20,6 +20,7 @@ import (
 	"fmt"
 	"log/slog"
 	"net/http"
+	"net/http/pprof"
 	"os"
 	"strconv"
 	"time"
@@ -34,6 +35,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/sts"
 	"github.com/aws/smithy-go"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/collectors"
 	versioncollector "github.com/prometheus/client_golang/prometheus/collectors/version"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/common/model"
@@ -340,6 +342,12 @@ func main() {
 	discovery.RegisterConfig(conf)
 
 	reg := prometheus.NewRegistry()
+	reg.MustRegister(
+		collectors.NewGoCollector(),
+		collectors.NewProcessCollector(collectors.ProcessCollectorOpts{}),
+		versioncollector.NewCollector("prometheus_elasticache_sd"),
+	)
+
 	refreshMetrics := discovery.NewRefreshMetrics(reg)
 	metrics, err := discovery.RegisterSDMetrics(reg, refreshMetrics)
 	if err != nil {
@@ -366,9 +374,12 @@ func main() {
 	sdAdapter := adapter.NewAdapter(ctx, *outputFile, "elasticache_sd", disc, logger, metrics, reg)
 	sdAdapter.Run()
 
-	prometheus.MustRegister(versioncollector.NewCollector("prometheus_elasticache_sd"))
-
-	http.Handle(*metricsPath, promhttp.Handler())
+	mux := http.NewServeMux()
+	mux.HandleFunc("GET /debug/pprof/", pprof.Index)
+	mux.HandleFunc("GET /debug/pprof/profile", pprof.Profile)
+	mux.HandleFunc("GET /debug/pprof/symbol", pprof.Symbol)
+	mux.HandleFunc("GET /debug/pprof/trace", pprof.Trace)
+	mux.Handle("GET "+*metricsPath, promhttp.HandlerFor(reg, promhttp.HandlerOpts{}))
 	landingPage, err := web.NewLandingPage(web.LandingConfig{
 		Name:        "ElastiCache Service Discovery",
 		Description: "Prometheus ElastiCache Service Discovery",
@@ -384,9 +395,9 @@ func main() {
 		logger.Error("Error instantiating landing page", "err", err)
 		os.Exit(1)
 	}
-	http.Handle("/", landingPage)
+	mux.Handle("GET /", landingPage)
 
-	srv := &http.Server{}
+	srv := &http.Server{Handler: mux}
 
 	if err := web.ListenAndServe(srv, webConfig, logger); err != nil {
 		logger.Error("Error starting HTTP server", "err", err)
