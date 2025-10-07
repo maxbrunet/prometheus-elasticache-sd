@@ -68,7 +68,7 @@ builds:
 archives:
   - &archive-default
     id: default
-    builds:
+    ids:
       - default
       - windows
     name_template: '{{ .ProjectName }}-{{ .Version }}.{{ .Os }}-{{ .Arch }}{{
@@ -81,7 +81,7 @@ archives:
       - NOTICE
   - <<: *archive-default
     id: zip
-    builds:
+    ids:
       - windows
     formats:
       - zip
