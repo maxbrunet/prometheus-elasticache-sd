@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.74](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.73...v2.0.74) (2025-10-22)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency semantic-release to v25 ([#1110](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1110)) ([192d109](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/192d109645aacb450a080b1075b48275fee52dad))
+* **deps:** update dependency semantic-release to v25.0.1 ([#1114](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1114)) ([5144c25](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/5144c254fec64e53cdccac77e56773aeb8c69327))
+* **deps:** update github/codeql-action action to v4.30.9 ([#1113](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1113)) ([ab4678f](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ab4678f519cdced175318ef0b5834e1a185467e7))
+* **deps:** update sigstore/cosign-installer action to v3.10.1 ([#1111](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1111)) ([596d085](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/596d085c91b6dc71b42017126e21c6468520719b))
+
+### Build System
+
+* **deps:** update module github.com/prometheus/prometheus to v0.307.0 ([#1115](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1115)) ([073b4a1](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/073b4a17db9e65ec850726f67c85ff45a799c8fa))
+
 ## [2.0.73](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.72...v2.0.73) (2025-10-14)
 
 ### Build System
