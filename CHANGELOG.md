@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.82](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.81...v2.0.82) (2025-11-04)
+
+### Miscellaneous Chores
+
+* **deps:** update module github.com/goreleaser/goreleaser to v2.12.7 ([#1127](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1127)) ([4432391](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4432391926a5c39936c762cfbdbe0d07eff114c8))
+* **deps:** update sigstore/cosign-installer action to v4 ([#1112](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1112)) ([22350a2](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/22350a28945b1efa861cf9a64fba808564d700e7))
+
+### Build System
+
+* **deps:** update module github.com/prometheus/common to v0.67.2 ([#1128](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1128)) ([e75aab2](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e75aab22dc65e8331b8302790d00e7c7c08d6f6d))
+
 ## [2.0.81](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.80...v2.0.81) (2025-10-31)
 
 ### Miscellaneous Chores
