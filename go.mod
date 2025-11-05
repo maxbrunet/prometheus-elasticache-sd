@@ -2,7 +2,7 @@ module github.com/maxbrunet/prometheus-elasticache-sd/v2
 
 go 1.24.0
 
-toolchain go1.25.3
+toolchain go1.25.4
 
 require (
 	github.com/alecthomas/kingpin/v2 v2.4.0
