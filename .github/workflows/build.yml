@@ -10,6 +10,20 @@ on:
 
 env:
   CGO_ENABLED: '0'
+  # renovate: datasource=go depName=github.com/golangci/golangci-lint
+  GOLANGCI_LINT_VERSION: v2.6.2
+  # renovate: datasource=go depName=github.com/goreleaser/goreleaser
+  GORELEASER_VERSION: v2.12.7
+  # renovate: datasource=npm depName=semantic-release
+  SEMANTIC_RELEASE_VERSION: 25.0.2
+  # renovate: datasource=npm depName=conventional-changelog-conventionalcommits
+  CONVENTIONAL_CHANGELOG_CONVENTIONALCOMMITS_VERSION: 9.1.0
+  # renovate: datasource=npm depName=@semantic-release/changelog
+  SEMANTIC_RELEASE_CHANGELOG_VERSION: 6.0.3
+  # renovate: datasource=npm depName=@semantic-release/exec
+  SEMANTIC_RELEASE_EXEC_VERSION: 7.1.0
+  # renovate: datasource=npm depName=@semantic-release/git
+  SEMANTIC_RELEASE_GIT_VERSION: 10.0.1
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
@@ -60,8 +74,7 @@ jobs:
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@e7fa5ac41e1cf5b7d48e45e42232ce7ada589601 # v9.1.0
         with:
-          # renovate: datasource=go depName=github.com/golangci/golangci-lint
-          version: v2.6.2
+          version: ${{ env.GOLANGCI_LINT_VERSION }}
 
   codeql-analyze:
     runs-on: ubuntu-24.04
@@ -112,8 +125,7 @@ jobs:
       - name: Build binaries
         uses: goreleaser/goreleaser-action@e435ccd777264be153ace6237001ef4d979d3a7a # v6.4.0
         with:
-          # renovate: datasource=go depName=github.com/goreleaser/goreleaser
-          version: v2.12.7
+          version: ${{ env.GORELEASER_VERSION }}
           args: build --clean --single-target --snapshot
 
   semantic-release:
@@ -145,8 +157,7 @@ jobs:
       - name: Set up GoReleaser
         uses: goreleaser/goreleaser-action@e435ccd777264be153ace6237001ef4d979d3a7a # v6.4.0
         with:
-          # renovate: datasource=go depName=github.com/goreleaser/goreleaser
-          version: v2.12.7
+          version: ${{ env.GORELEASER_VERSION }}
           install-only: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -165,13 +176,12 @@ jobs:
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@b12c8f6015dc215fe37bc154d4ad456dd3833c90 # v6.0.0
         with:
-          # renovate: datasource=npm depName=semantic-release
-          semantic_version: 25.0.2
+          semantic_version: ${{ env.SEMANTIC_RELEASE_VERSION }}
           dry_run: ${{ github.event_name == 'pull_request' }}
           extra_plugins: |
-            conventional-changelog-conventionalcommits@9.1.0
-            @semantic-release/changelog@6.0.3
-            @semantic-release/exec@7.1.0
-            @semantic-release/git@10.0.1
+            conventional-changelog-conventionalcommits@${{ env.CONVENTIONAL_CHANGELOG_CONVENTIONALCOMMITS_VERSION }}
+            @semantic-release/changelog@${{ env.SEMANTIC_RELEASE_CHANGELOG_VERSION }}
+            @semantic-release/exec@${{ env.SEMANTIC_RELEASE_EXEC_VERSION }}
+            @semantic-release/git@${{ env.SEMANTIC_RELEASE_GIT_VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

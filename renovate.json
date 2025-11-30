@@ -6,7 +6,9 @@
     ":automergeMinor",
     ":rebaseStalePrs",
     ":semanticCommits",
-    ":semanticCommitScope(deps)"
+    ":semanticCommitScope(deps)",
+    "customManagers:githubActionsVersions",
+    "helpers:pinGitHubActionDigestsToSemver"
   ],
   "assignees": ["maxbrunet"],
   "internalChecksFilter": "strict",
@@ -39,35 +41,24 @@
       "semanticCommitType": "build"
     },
     {
-      "matchPackageNames": ["quay.io/prometheus/busybox"],
+      "matchManagers": ["jsonata"],
+      "matchDepTypes": ["kos.base_image"],
       "semanticCommitType": "build"
     }
   ],
   "customManagers": [
     {
-      "description": "Update version keys in YAML files",
-      "customType": "regex",
-      "managerFilePatterns": ["/(^|/).*.ya?ml$/"],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?\\s*[\\w-_]*version: (?<currentValue>.*?)\\s"
-      ]
-    },
-    {
       "description": "Update base image in .goreleaser.yml",
-      "customType": "regex",
+      "customType": "jsonata",
+      "fileFormat": "yaml",
       "managerFilePatterns": ["/(^|/)\\.goreleaser\\.ya?ml$/"],
       "matchStrings": [
-        "base_image:\\s+[\"']?(?<depName>\\S+?)(?::(?<currentValue>\\S+?))?(?:@(?<currentDigest>sha256:\\S+))?[\"']?\\s"
+        "kos.$match(base_image, /^(.+?)(?::(.+?))?(?:@(sha256:.+))?$/).{ 'depName': groups[0], 'currentValue': groups[1], 'currentDigest': groups[2] }"
       ],
+      "autoReplaceStringTemplate": "{{depName}}{{#if newValue}}:{{newValue}}{{/if}}{{#if newDigest}}@{{newDigest}}{{/if}}",
       "datasourceTemplate": "docker",
+      "depTypeTemplate": "kos.base_image",
       "versioningTemplate": "docker"
-    },
-    {
-      "description": "Update semantic-release plugins",
-      "customType": "regex",
-      "managerFilePatterns": ["/^\\.github/workflows/build\\.yml$/"],
-      "matchStrings": ["\\s{12}(?<depName>\\S+?)@(?<currentValue>.+?)\\s"],
-      "datasourceTemplate": "npm"
     }
   ]
 }
