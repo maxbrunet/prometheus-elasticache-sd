@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.98](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.97...v2.0.98) (2025-12-03)
+
+### Miscellaneous Chores
+
+* **deps:** update golangci/golangci-lint-action action to v9.2.0 ([#1164](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1164)) ([92ce595](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/92ce5957afdfad305ddc9e48fe527f57b082a577))
+* **deps:** update quay.io/prometheus/busybox docker digest to 4f9a705 ([#1163](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1163)) ([bdb7acd](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/bdb7acd370acf41d21117a4a782bd7dd5f2602ca))
+* **deps:** update quay.io/prometheus/busybox docker digest to fe9080e ([#1165](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1165)) ([4baa622](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4baa622d49b18b8b1408cd6fabb05dad0071b0f1))
+
+### Build System
+
+* **deps:** update dependency go to v1.25.5 ([#1160](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1160)) ([87518b5](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/87518b52635637599c259409b30ecc17d3aa8245))
+
 ## [2.0.97](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.96...v2.0.97) (2025-12-02)
 
 ### Miscellaneous Chores
