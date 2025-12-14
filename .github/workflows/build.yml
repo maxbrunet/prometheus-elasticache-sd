@@ -11,7 +11,7 @@ on:
 env:
   CGO_ENABLED: '0'
   # renovate: datasource=go depName=github.com/golangci/golangci-lint
-  GOLANGCI_LINT_VERSION: v2.7.1
+  GOLANGCI_LINT_VERSION: v2.7.2
   # renovate: datasource=go depName=github.com/goreleaser/goreleaser
   GORELEASER_VERSION: v2.13.0
   # renovate: datasource=npm depName=semantic-release
