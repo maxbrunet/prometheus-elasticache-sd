@@ -13,7 +13,7 @@ env:
   # renovate: datasource=go depName=github.com/golangci/golangci-lint
   GOLANGCI_LINT_VERSION: v2.7.2
   # renovate: datasource=go depName=github.com/goreleaser/goreleaser
-  GORELEASER_VERSION: v2.13.0
+  GORELEASER_VERSION: v2.13.1
   # renovate: datasource=npm depName=semantic-release
   SEMANTIC_RELEASE_VERSION: 25.0.2
   # renovate: datasource=npm depName=conventional-changelog-conventionalcommits
