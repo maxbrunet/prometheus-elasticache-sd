@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.112](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.111...v2.0.112) (2026-02-04)
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v6.0.2 ([#1195](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1195)) ([eabed65](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/eabed65fbc47799eaeabec5f3d707369c43e1558))
+* **deps:** update docker/login-action action to v3.7.0 ([#1198](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1198)) ([4dc2cb2](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/4dc2cb2cb5739af02dd2df1a7eeaa39d30ef6ffb))
+* **deps:** update github/codeql-action action to v4.31.11 ([#1196](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1196)) ([e2d8802](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e2d88023b3322fcf7807bbf8dfb89b5f7fe3646b))
+* **deps:** update github/codeql-action action to v4.32.0 ([#1197](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1197)) ([8f6ff02](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/8f6ff024a41dc2a477dc214fe9a4dea80d1ca400))
+* **deps:** update github/codeql-action action to v4.32.1 ([#1199](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1199)) ([f0c515c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f0c515cd96e2b5113fcaf07efd9aec721545da9f))
+* **deps:** update module github.com/goreleaser/goreleaser to v2.13.3 ([#1194](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1194)) ([919992d](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/919992d21b84fe6246a620f626b5c15ae85cd591))
+
+### Build System
+
+* **deps:** update dependency go to v1.25.7 ([#1201](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1201)) ([1b91a87](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/1b91a8758cccdb03818c16f641de67fbbae5f97c))
+
 ## [2.0.111](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.110...v2.0.111) (2026-01-16)
 
 ### Build System
