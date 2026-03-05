@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.118](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.117...v2.0.118) (2026-03-05)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency conventional-changelog-conventionalcommits to v9.2.0 ([#1221](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1221)) ([b75ea4c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b75ea4c3f021a206d34c25de5326964fc2385890))
+* **deps:** update docker/login-action action to v4 ([#1218](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1218)) ([d755593](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/d7555934b312ba90606ba1b1dc48995ffca47af4))
+* **deps:** update module github.com/goreleaser/goreleaser to v2.14.1 ([#1219](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1219)) ([65b00b9](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/65b00b9493374fd8c42f7eed2fd1ca40f41214cc))
+
+### Build System
+
+* **deps:** update module github.com/prometheus/prometheus to v0.310.0 ([#1220](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1220)) ([2dc9f2c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/2dc9f2cd90f8deb64a493071b9762003bfd26e41))
+
 ## [2.0.117](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.116...v2.0.117) (2026-03-02)
 
 ### Miscellaneous Chores
