@@ -17,7 +17,7 @@ env:
   # renovate: datasource=npm depName=semantic-release
   SEMANTIC_RELEASE_VERSION: 25.0.3
   # renovate: datasource=npm depName=conventional-changelog-conventionalcommits
-  CONVENTIONAL_CHANGELOG_CONVENTIONALCOMMITS_VERSION: 9.2.0
+  CONVENTIONAL_CHANGELOG_CONVENTIONALCOMMITS_VERSION: 9.3.0
   # renovate: datasource=npm depName=@semantic-release/changelog
   SEMANTIC_RELEASE_CHANGELOG_VERSION: 6.0.3
   # renovate: datasource=npm depName=@semantic-release/exec
