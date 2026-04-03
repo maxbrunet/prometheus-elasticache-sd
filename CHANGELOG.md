@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.123](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.122...v2.0.123) (2026-04-03)
+
+### Miscellaneous Chores
+
+* **deps:** update actions/setup-go action to v6.4.0 ([#1242](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1242)) ([08b0ac6](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/08b0ac68d87e476b38c0a45a4c00c673a7486de2))
+* **deps:** update dependency conventional-changelog-conventionalcommits to v9.3.1 ([#1243](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1243)) ([f7f2892](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f7f28924d0ef13b4b63a8b3efaa64670e68ad8b9))
+* **deps:** update docker/login-action action to v4.1.0 ([#1245](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1245)) ([f88ad6a](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/f88ad6a09c5e18fd4d2d55d1376eebed198918b3))
+* **deps:** update github/codeql-action action to v4.34.1 ([#1237](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1237)) ([cf6df7d](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/cf6df7dc49bedeaf59334831326e648cdf9e1c3e))
+* **deps:** update github/codeql-action action to v4.35.0 ([#1239](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1239)) ([77f36a4](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/77f36a47a4f153b1fa351875a672749ca6fa3ca5))
+* **deps:** update github/codeql-action action to v4.35.1 ([#1240](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1240)) ([97df92d](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/97df92dc4dfe41a81ee6e2d0e7e3d0658296ed89))
+* **deps:** update module github.com/golangci/golangci-lint to v2.11.4 ([#1241](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1241)) ([d6bbf4b](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/d6bbf4b3aee9dd1ca47c429af1a536b833e6bda4))
+* **deps:** update sigstore/cosign-installer action to v4.1.1 ([#1238](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1238)) ([d9ba560](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/d9ba560ef3afeab392283e528d49670ae00d7d19))
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#1244](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1244)) ([ee72abb](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ee72abb78aaf52fb4045c024c8252b769721f9e3))
+
 ## [2.0.122](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.121...v2.0.122) (2026-03-20)
 
 ### Miscellaneous Chores
