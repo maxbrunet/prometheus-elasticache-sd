@@ -95,7 +95,7 @@ kos:
     tags:
       - '{{ .Tag }}'
       - latest
-    base_image: quay.io/prometheus/busybox@sha256:01f42279a543f721590162eb7d67e26b2e887f264dbc21f673c2f837a9706b0b
+    base_image: quay.io/prometheus/busybox@sha256:cbfd893bf86113dbe6b36c2106365f08acb8ee9223167d6dc5e07a3493a24544
     creation_time: '{{ .CommitTimestamp }}'
     ko_data_creation_time: '{{ .CommitTimestamp }}'
     labels:
