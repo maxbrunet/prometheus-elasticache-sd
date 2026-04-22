@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.133](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.132...v2.0.133) (2026-04-22)
+
+### Miscellaneous Chores
+
+* **deps:** update github/codeql-action action to v4.35.2 ([#1259](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1259)) ([5467e9c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/5467e9c475990de93841abf40ea023e9535a72a4))
+* **deps:** update goreleaser/goreleaser-action action to v7.1.0 ([#1260](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1260)) ([18e8f74](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/18e8f74fc8b142acffa857489973beafa08cf09a))
+* **deps:** update module github.com/goreleaser/goreleaser to v2.15.3 ([#1261](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1261)) ([73e0b39](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/73e0b391fac135be9477f1bfd6a65074abe63c59))
+* **deps:** update quay.io/prometheus/busybox docker digest to cbfd893 ([#1258](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1258)) ([05d2342](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/05d2342a1f3e4473c0187a56de8b083fef4a0de5))
+
+### Build System
+
+* **deps:** update module github.com/aws/smithy-go to v1.25.0 ([#1262](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1262)) ([e3954a2](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e3954a293679a7e4a1cfc4081abf8a96544aeb8b))
+
 ## [2.0.132](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.131...v2.0.132) (2026-04-14)
 
 ### Build System
