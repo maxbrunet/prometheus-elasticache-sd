@@ -74,6 +74,10 @@ archives:
     name_template: '{{ .ProjectName }}-{{ .Version }}.{{ .Os }}-{{ .Arch }}{{
       if .Arm }}v{{ .Arm }}{{ end }}{{ if and .Mips (ne .Mips "hardfloat") }}-{{
       .Mips }}{{ end }}'
+    builds_info:
+      group: root
+      owner: root
+      mtime: '{{ .CommitTimestamp }}'
     formats:
       - tar.gz
     files:
