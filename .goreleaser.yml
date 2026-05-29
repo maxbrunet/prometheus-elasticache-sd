@@ -77,12 +77,15 @@ archives:
     builds_info:
       group: root
       owner: root
-      mtime: '{{ .CommitTimestamp }}'
+      mtime: '{{ .CommitDate }}'
     formats:
       - tar.gz
     files:
-      - LICENSE
-      - NOTICE
+      - src: '{LICENSE,NOTICE}'
+        info:
+          owner: root
+          group: root
+          mtime: '{{ .CommitDate }}'
   - <<: *archive-default
     id: zip
     ids:
