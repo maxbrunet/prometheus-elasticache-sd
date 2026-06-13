@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.153](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.152...v2.0.153) (2026-06-13)
+
+### Miscellaneous Chores
+
+* **deps:** update semantic-release monorepo to v25.0.4 ([#1305](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1305)) ([42eb828](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/42eb8286307e67014e7114a4b3cbba52c8cf9182))
+
+### Build System
+
+* **deps:** update module github.com/aws/smithy-go to v1.27.2 ([#1306](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1306)) ([0465069](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/046506913b00190a140802e9fdcf0191aee659d6))
+
 ## [2.0.152](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.151...v2.0.152) (2026-06-12)
 
 ### Build System
