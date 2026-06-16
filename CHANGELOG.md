@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.154](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.153...v2.0.154) (2026-06-16)
+
+### Miscellaneous Chores
+
+* **deps:** update quay.io/prometheus/busybox docker digest to 7459e2d ([#1307](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1307)) ([96100df](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/96100df5335939378f85fba59cb5fda7901c8419))
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#1308](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1308)) ([d7fb101](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/d7fb101b0972d5026890b6de958dd0cb1eb327c2))
+
 ## [2.0.153](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.152...v2.0.153) (2026-06-13)
 
 ### Miscellaneous Chores
