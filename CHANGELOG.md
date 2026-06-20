@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.156](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.155...v2.0.156) (2026-06-20)
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v7 ([#1310](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1310)) ([8a9d12d](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/8a9d12d6a51f2d9e90d71528a372bd2296377977))
+
+### Build System
+
+* **deps:** update module github.com/prometheus/prometheus to v0.312.0 ([#1294](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1294)) ([07e06d0](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/07e06d0ff1b1495d12254f5197b7a77a68098704))
+
 ## [2.0.155](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.154...v2.0.155) (2026-06-17)
 
 ### Build System
