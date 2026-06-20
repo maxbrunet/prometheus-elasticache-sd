@@ -348,14 +348,13 @@ func main() {
 		versioncollector.NewCollector("prometheus_elasticache_sd"),
 	)
 
-	refreshMetrics := discovery.NewRefreshMetrics(reg)
-	metrics, err := discovery.RegisterSDMetrics(reg, refreshMetrics)
+	sdMetrics, err := discovery.CreateAndRegisterSDMetrics(reg)
 	if err != nil {
-		logger.Error("failed to register service discovery metrics", "err", err)
+		logger.Error("failed to register the SD metrics", "err", err)
 		os.Exit(1)
 	}
 
-	discMetrics, ok := metrics[conf.Name()]
+	discMetrics, ok := sdMetrics.MechanismMetrics[conf.Name()]
 	if !ok {
 		logger.Error("discoverer metrics not registered")
 		os.Exit(1)
@@ -371,7 +370,7 @@ func main() {
 	}
 	ctx := context.Background()
 
-	sdAdapter := adapter.NewAdapter(ctx, *outputFile, "elasticache_sd", disc, logger, metrics, reg)
+	sdAdapter := adapter.NewAdapter(ctx, *outputFile, "elasticache_sd", disc, logger, sdMetrics, reg)
 	sdAdapter.Run()
 
 	mux := http.NewServeMux()
