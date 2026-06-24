@@ -13,7 +13,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/sts v1.43.3
 	github.com/aws/smithy-go v1.27.2
 	github.com/prometheus/client_golang v1.23.2
-	github.com/prometheus/common v0.68.1
+	github.com/prometheus/common v0.69.0
 	github.com/prometheus/exporter-toolkit v0.16.0
 	github.com/prometheus/prometheus v0.312.0
 )
