@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.160](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.159...v2.0.160) (2026-07-06)
+
 ## [2.0.159](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.158...v2.0.159) (2026-07-06)
 
 ## [2.0.158](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.157...v2.0.158) (2026-07-04)
