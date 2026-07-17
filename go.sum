@@ -81,8 +81,8 @@ github.com/prometheus/exporter-toolkit v0.17.1 h1:psKN4wM7shBL/BxZkDHgm6YZJ3fAVG
 github.com/prometheus/exporter-toolkit v0.17.1/go.mod h1:dabwPJvxsC5+tsp2iolQrqBWZh+QlISKlYRpj9Hh5xk=
 github.com/prometheus/procfs v0.16.1 h1:hZ15bTNuirocR6u0JZ6BAHHmwS1p8B4P6MRqxtzMyRg=
 github.com/prometheus/procfs v0.16.1/go.mod h1:teAbpZRB1iIAJYREa1LsoWUXykVXA1KlTmWl8x/U+Is=
-github.com/prometheus/prometheus v0.313.0 h1:DH5Rcybaem9nuKaFYtY+Kmogmp/NiNPpS9WBIRlSy6E=
-github.com/prometheus/prometheus v0.313.0/go.mod h1:Kq9A+EPun2WyVusbQxO7Tx1RxKqLKFclfiBGJA1mFkk=
+github.com/prometheus/prometheus v0.313.1 h1:BOyoPuxCL+58NpuZ0ovKuKo8ALmVLTCTIM7r8znt6z8=
+github.com/prometheus/prometheus v0.313.1/go.mod h1:Kq9A+EPun2WyVusbQxO7Tx1RxKqLKFclfiBGJA1mFkk=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/objx v0.4.0/go.mod h1:YvHI0jy2hoMjB+UWwv71VJQ9isScKT/TqJzVSSt89Yw=
 github.com/stretchr/objx v0.5.0/go.mod h1:Yh+to48EsGEfYuaHDzXPcE3xhTkx73EhmCGUpEOglKo=
