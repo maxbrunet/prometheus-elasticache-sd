@@ -1,6 +1,6 @@
 module github.com/maxbrunet/prometheus-elasticache-sd/v2
 
-go 1.25.0
+go 1.25.8
 
 toolchain go1.26.6
 
@@ -15,7 +15,7 @@ require (
 	github.com/prometheus/client_golang v1.24.1
 	github.com/prometheus/common v0.70.1
 	github.com/prometheus/exporter-toolkit v0.17.1
-	github.com/prometheus/prometheus v0.313.2
+	github.com/prometheus/prometheus v0.314.0
 )
 
 require (
@@ -53,9 +53,9 @@ require (
 	golang.org/x/sys v0.47.0 // indirect
 	golang.org/x/text v0.40.0 // indirect
 	golang.org/x/time v0.15.0 // indirect
-	google.golang.org/protobuf v1.36.11 // indirect
+	google.golang.org/protobuf v1.36.12-0.20260120151049-f2248ac996af // indirect
 	k8s.io/apimachinery v0.35.3 // indirect
 	k8s.io/client-go v0.35.3 // indirect
 	k8s.io/klog/v2 v2.140.0 // indirect
-	k8s.io/utils v0.0.0-20251002143259-bc988d571ff4 // indirect
+	k8s.io/utils v0.0.0-20260210185600-b8788abfbbc2 // indirect
 )
