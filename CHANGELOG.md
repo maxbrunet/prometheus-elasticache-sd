@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.188](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.187...v2.0.188) (2026-08-28)
+
+### Build System
+
+* **deps:** update module github.com/aws/smithy-go to v1.27.8 ([#1373](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1373)) ([9543608](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9543608535c0a7ff16efc2c6e9012272ccfc4f0e))
+
 ## [2.0.187](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.186...v2.0.187) (2026-08-27)
 
 ### Miscellaneous Chores
