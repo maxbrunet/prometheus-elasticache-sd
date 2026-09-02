@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.192](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.191...v2.0.192) (2026-09-02)
+
+### Build System
+
+* **deps:** update go toolchain directive to v1.27.1 ([#1383](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1383)) ([de693de](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/de693de8b4817af0a567f1946b18527037e8d8ea))
+
 ## [2.0.191](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.190...v2.0.191) (2026-09-01)
 
 ### Build System
