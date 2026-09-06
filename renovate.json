@@ -41,7 +41,6 @@
       "semanticCommitType": "build"
     },
     {
-      "matchManagers": ["jsonata"],
       "matchDepTypes": ["kos.base_image"],
       "semanticCommitType": "build"
     }
