@@ -95,27 +95,51 @@ archives:
 checksum:
   name_template: sha256sums.txt
 kos:
-  - id: default
+  - &ko-busybox
+    id: busybox
+    build: default
     repositories:
       - ghcr.io/maxbrunet/prometheus-elasticache-sd
+    local_domain: ko.local/maxbrunet/prometheus-elasticache-sd
     bare: true
     tags:
+      - '{{ .Tag }}-busybox'
       - '{{ .Tag }}'
+      - v2-busybox
+      - v2
       - latest
     base_image: quay.io/prometheus/busybox:latest@sha256:57ba692be36a8bb37322da87b164f7d2a655fdfec91ac85cc32cbdb3aa86d67a
     creation_time: '{{ .CommitTimestamp }}'
     ko_data_creation_time: '{{ .CommitTimestamp }}'
-    labels:
-      org.opencontainers.image.licenses: Apache-2.0
+    labels: &labels-busybox
+      org.opencontainers.image.authors: Maxime Brunet,The Prometheus Authors
+      org.opencontainers.image.vendor: maxbrunet
+      org.opencontainers.image.title: prometheus-elasticache-sd
+      org.opencontainers.image.description: Prometheus Service Discovery for AWS ElastiCache
       org.opencontainers.image.source: https://github.com/maxbrunet/prometheus-elasticache-sd
       org.opencontainers.image.url: https://github.com/maxbrunet/prometheus-elasticache-sd
+      org.opencontainers.image.documentation: https://github.com/maxbrunet/prometheus-elasticache-sd
+      org.opencontainers.image.licenses: Apache License 2.0
+      io.prometheus.image.variant: busybox
     user: nobody
     platforms:
       - linux/amd64
       - linux/arm/v7
       - linux/arm64
       - linux/ppc64le
+      - linux/riscv64
       - linux/s390x
+  - <<: *ko-busybox
+    id: distroless
+    tags:
+      - '{{ .Tag }}-distroless'
+      - v2-distroless
+    base_image: gcr.io/distroless/static-debian13:nonroot@sha256:1c2c046bc09ed40fad370b599a0b1ae7987f55b01e247cf27a7c27cd97e5bbc7
+    labels:
+      <<: *labels-busybox
+      io.prometheus.image.variant: distroless
+    # Base image sets USER to 65532 (nonroot user).
+    user: null
 docker_signs:
   - artifacts: manifests
     cmd: cosign
