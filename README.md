@@ -10,7 +10,7 @@ ElastiCache SD allows retrieving scrape targets from [AWS ElastiCache](https://a
 
 Help on flags:
 
-```
+```shell
 ./prometheus-elasticache-sd --help
 ```
 
@@ -89,19 +89,25 @@ see its [README](https://github.com/prometheus/memcached_exporter#multi-target) 
 
 Binary:
 
-```
+```shell
 go build .
 ```
 
 Container image with [ko](https://ko.build):
 
-```
-ko build --base-import-paths --local .
+```shell
+KO_DEFAULTBASEIMAGE="$(grep -oPm 1 'base_image: \K.+' .goreleaser.yml)" \
+  KO_DOCKER_REPO=ko.local/maxbrunet/prometheus-elasticache-sd \
+  ko build \
+    --bare \
+    --image-user=nobody \
+    --tags="$(git describe --match='v*' --tags || git rev-parse --short HEAD)" \
+    .
 ```
 
 ### Test
 
-```
+```shell
 go test -v ./...
 ```
 
