@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.199](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.198...v2.0.199) (2026-09-07)
+
+### Build System
+
+* **goreleaser:** add distroless container image variant ([#1393](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1393)) ([8425254](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/842525442fb670735d774a309ceb54189961587f))
+
 ## [2.0.198](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.197...v2.0.198) (2026-09-06)
 
 ### Miscellaneous Chores
