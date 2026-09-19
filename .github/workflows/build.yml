@@ -57,7 +57,7 @@ jobs:
         run: go test -v ./...
 
   lint:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     timeout-minutes: 10
 
@@ -78,7 +78,7 @@ jobs:
           version: ${{ env.GOLANGCI_LINT_VERSION }}
 
   codeql-analyze:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       security-events: write
 
@@ -107,7 +107,7 @@ jobs:
         uses: github/codeql-action/analyze@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
 
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     timeout-minutes: 10
 
@@ -131,7 +131,7 @@ jobs:
 
   semantic-release:
     needs: [codeql-analyze, build, lint, test]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
       id-token: write
