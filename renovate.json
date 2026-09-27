@@ -45,6 +45,16 @@
       "semanticCommitType": "build"
     }
   ],
+  "customDatasources": {
+    "riscv-runners": {
+      "description": "RISE RISC-V runner labels track the ubuntu os-versions in the riscv-runner build matrix",
+      "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/riseproject-dev/riscv-runner/main/.github/workflows/deploy-runner.yml",
+      "format": "yaml",
+      "transformTemplates": [
+        "{'releases': jobs.`build-images`.strategy.matrix.include.{'version': `os-version` & '-riscv'}, 'sourceUrl': 'https://github.com/riseproject-dev/riscv-runner', 'homepage': 'https://riscv-runners.riseproject.dev/'}"
+      ]
+    }
+  },
   "customManagers": [
     {
       "description": "Update base image in .goreleaser.yml",
@@ -58,6 +68,18 @@
       "datasourceTemplate": "docker",
       "depTypeTemplate": "kos.base_image",
       "versioningTemplate": "docker"
+    },
+    {
+      "description": "Update GitHub Actions runner labels in strategy.matrix runs-on",
+      "customType": "jsonata",
+      "fileFormat": "yaml",
+      "managerFilePatterns": ["/^\\.github/workflows/build\\.yml$/"],
+      "matchStrings": [
+        "jobs.test.strategy.matrix.`runs-on`[$match($, /^[a-z]+-[0-9]+\\.[0-9]+/)].{ 'depName': $substringBefore($, '-'), 'currentValue': $substringAfter($, '-') }"
+      ],
+      "datasourceTemplate": "{{#if (containsString currentValue \"-riscv\")}}custom.riscv-runners{{else}}github-runners{{/if}}",
+      "versioningTemplate": "docker",
+      "depTypeTemplate": "github-runner"
     }
   ]
 }
