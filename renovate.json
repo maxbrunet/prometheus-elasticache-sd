@@ -8,7 +8,8 @@
     ":semanticCommits",
     ":semanticCommitScope(deps)",
     "customManagers:githubActionsVersions",
-    "helpers:pinGitHubActionDigestsToSemver"
+    "helpers:pinGitHubActionDigestsToSemver",
+    "security:gomodIndirectSecurityUpdates"
   ],
   "assignees": ["maxbrunet"],
   "internalChecksFilter": "strict",
