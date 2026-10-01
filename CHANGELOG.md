@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.206](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.205...v2.0.206) (2026-10-01)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency ubuntu to v26 ([#1401](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1401)) ([8a6f297](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/8a6f29758ea8756e78c75ffac2b92744e373779a))
+* **deps:** update dependency ubuntu to v26 in strategy.matrix ([#1406](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1406)) ([ded4759](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/ded47597999d5122ba95d0e5653671eff0c72eeb))
+* **deps:** update module github.com/golangci/golangci-lint to v2.14.0 ([#1410](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1410)) ([11b7efd](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/11b7efdb35a7409c898e89742ccd778d53764542))
+* **renovate:** enable gomod indirect security updates ([#1408](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1408)) ([a656e6e](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/a656e6e606d2aae8859e5d2bf0ed002fa3677099))
+
+### Build System
+
+* **deps:** update module github.com/prometheus/exporter-toolkit to v0.20.0 ([#1409](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1409)) ([c5cbd2b](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c5cbd2bbb4ac5fe6ffdb11f6b5f3fdbdb9816ec8))
+
 ## [2.0.205](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.204...v2.0.205) (2026-09-26)
 
 ### Miscellaneous Chores
