@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.210](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.209...v2.0.210) (2026-10-07)
+
+### Build System
+
+* **deps:** update module github.com/aws/aws-sdk-go-v2/service/elasticache to v1.63.0 ([#1414](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1414)) ([e837335](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/e837335c2aebb140752741db8d76833bad89d2a0))
+
 ## [2.0.209](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.208...v2.0.209) (2026-10-05)
 
 ### Build System
