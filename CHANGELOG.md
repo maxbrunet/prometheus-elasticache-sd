@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.212](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.211...v2.0.212) (2026-10-14)
+
+### Miscellaneous Chores
+
+* **deps:** update cycjimmy/semantic-release-action action to v7 ([#1417](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1417)) ([c857f26](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c857f2683da31d8ae07754f3dc4052f7cdb55cea))
+* **deps:** update cycjimmy/semantic-release-action action to v7.1.2 ([#1418](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1418)) ([c226f91](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/c226f91f66d3389eef3c3818045aa9569a59ff4e))
+* **deps:** update cycjimmy/semantic-release-action action to v8 ([#1419](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1419)) ([fc9851d](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/fc9851db519635575816223fcdb0f102cf2e13f6))
+* **deps:** update cycjimmy/semantic-release-action action to v8.0.1 ([#1421](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1421)) ([60ffdb6](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/60ffdb66a620b83683656e851249ac44ef8b35aa))
+* **deps:** update goreleaser/goreleaser-action action to v7.3.0 ([#1420](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1420)) ([6df0be1](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/6df0be15ece4a08c7a537372d896039be9e8d977))
+
+### Build System
+
+* **deps:** update aws-sdk-go-v2 monorepo ([#1422](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1422)) ([a613fa6](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/a613fa60750b2618aaea19f554696a8f6d70afe3))
+
 ## [2.0.211](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.210...v2.0.211) (2026-10-08)
 
 ### Miscellaneous Chores
