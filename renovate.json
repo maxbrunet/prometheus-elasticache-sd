@@ -65,7 +65,7 @@
       "matchStrings": [
         "kos.$match(base_image, /^(.+?)(?::(.+?))?(?:@(sha256:.+))?$/).{ 'depName': groups[0], 'currentValue': groups[1], 'currentDigest': groups[2] }"
       ],
-      "autoReplaceStringTemplate": "{{depName}}{{#if newValue}}:{{newValue}}{{/if}}{{#if newDigest}}@{{newDigest}}{{/if}}",
+      "autoReplaceStringTemplate": "{{#if (and currentDigest (equals currentValue newValue))}}{{newDigest}}{{else}}{{newValue}}{{#unless currentDigest}}{{#if newDigest}}@{{newDigest}}{{/if}}{{/unless}}{{/if}}",
       "datasourceTemplate": "docker",
       "depTypeTemplate": "kos.base_image",
       "versioningTemplate": "docker"
