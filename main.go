@@ -15,6 +15,7 @@
 package main
 
 import (
+	"cmp"
 	"context"
 	"errors"
 	"fmt"
@@ -184,6 +185,12 @@ func (d *ElasticacheDiscovery) elasticacheClient(ctx context.Context) (*elastica
 	return d.elasticache, nil
 }
 
+func setLabel(labels model.LabelSet, name model.LabelName, value *string) {
+	if value != nil {
+		labels[name] = model.LabelValue(*value)
+	}
+}
+
 func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Group, error) {
 	elasticacheClient, err := d.elasticacheClient(ctx)
 	if err != nil {
@@ -204,8 +211,7 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 	for {
 		o, err := p.NextPage(ctx)
 		if err != nil {
-			var apiErr smithy.APIError
-			if errors.As(err, &apiErr) && (apiErr.ErrorCode() == "AuthFailure" || apiErr.ErrorCode() == "UnauthorizedOperation") {
+			if apiErr, ok := errors.AsType[smithy.APIError](err); ok && (apiErr.ErrorCode() == "AuthFailure" || apiErr.ErrorCode() == "UnauthorizedOperation") {
 				d.elasticache = nil
 			}
 
@@ -213,60 +219,76 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
 		}
 
 		for _, cc := range o.CacheClusters {
-			labels := model.LabelSet{
-				model.LabelName(ecLabelCacheClusterID):          model.LabelValue(*cc.CacheClusterId),
-				model.LabelName(ecLabelCacheClusterStatus):      model.LabelValue(*cc.CacheClusterStatus),
-				model.LabelName(ecLabelCacheNodeType):           model.LabelValue(*cc.CacheNodeType),
-				model.LabelName(ecLabelCacheParameterGroupName): model.LabelValue(*cc.CacheParameterGroup.CacheParameterGroupName),
-				model.LabelName(ecLabelCacheSubnetGroupName):    model.LabelValue(*cc.CacheSubnetGroupName),
-				model.LabelName(ecLabelEngine):                  model.LabelValue(*cc.Engine),
-				model.LabelName(ecLabelEngineVersion):           model.LabelValue(*cc.EngineVersion),
-				model.LabelName(ecLabelPreferredAZ):             model.LabelValue(*cc.PreferredAvailabilityZone),
+			// Every field below is optional in the ElastiCache API.
+			labels := make(model.LabelSet, 16)
+			setLabel(labels, ecLabelCacheClusterID, cc.CacheClusterId)
+			setLabel(labels, ecLabelCacheClusterStatus, cc.CacheClusterStatus)
+			setLabel(labels, ecLabelCacheNodeType, cc.CacheNodeType)
+			if cc.CacheParameterGroup != nil {
+				setLabel(labels, ecLabelCacheParameterGroupName, cc.CacheParameterGroup.CacheParameterGroupName)
 			}
+			setLabel(labels, ecLabelCacheSubnetGroupName, cc.CacheSubnetGroupName)
+			setLabel(labels, ecLabelEngine, cc.Engine)
+			setLabel(labels, ecLabelEngineVersion, cc.EngineVersion)
+			setLabel(labels, ecLabelPreferredAZ, cc.PreferredAvailabilityZone)
+			setLabel(labels, ecLabelReplicationGroupID, cc.ReplicationGroupId)
 
-			if cc.ReplicationGroupId != nil {
-				labels[model.LabelName(ecLabelReplicationGroupID)] = model.LabelValue(*cc.ReplicationGroupId)
-			}
-
+			resourceARN := aws.ToString(cc.ARN)
 			tags := []types.Tag{}
 
-			to, err := elasticacheClient.ListTagsForResource(ctx, &elasticache.ListTagsForResourceInput{
-				ResourceName: cc.ARN,
-			})
+			var to *elasticache.ListTagsForResourceOutput
+			var err error
+			if resourceARN != "" {
+				to, err = elasticacheClient.ListTagsForResource(ctx, &elasticache.ListTagsForResourceInput{
+					ResourceName: cc.ARN,
+				})
+			}
 			if err != nil {
-				d.logger.Warn("could not list tags", "err", err.Error(), "ARN", *cc.ARN, "status", *cc.CacheClusterStatus)
+				d.logger.Warn("could not list tags", "err", err.Error(), "ARN", resourceARN, "status", aws.ToString(cc.CacheClusterStatus))
 
 				// If a cache cluster is not in "available" status (e.g. "snapshotting"),
 				// its tags are unavailable, so if the relabeling logic depends on `__meta_elasticache_tag_<tagkey>` labels,
 				// the clusters may disappear from the Prometheus targets when that happens,
 				// thus we try to reuse the last tags we know about.
-				if _, ok := d.lastTags[*cc.ARN]; ok {
-					d.logger.Warn("reusing last known tags", "ARN", *cc.ARN)
-					tags = d.lastTags[*cc.ARN]
+				if last, ok := d.lastTags[resourceARN]; ok {
+					d.logger.Warn("reusing last known tags", "ARN", resourceARN)
+					tags = last
 				}
-			} else {
+			} else if to != nil {
 				tags = to.TagList
 			}
 
-			currentTags[*cc.ARN] = tags
+			if resourceARN != "" {
+				currentTags[resourceARN] = tags
+			}
 
 			for _, t := range tags {
+				if t.Key == nil || t.Value == nil {
+					continue
+				}
+
 				name := strutil.SanitizeLabelName(*t.Key)
 				labels[ecLabelTag+model.LabelName(name)] = model.LabelValue(*t.Value)
 			}
 
+			identity := cmp.Or(resourceARN, aws.ToString(cc.CacheClusterId))
+
 			for _, cn := range cc.CacheNodes {
 				nodeLabels := labels.Clone()
-				nodeLabels[model.LabelName(ecLabelCacheNodeID)] = model.LabelValue(*cn.CacheNodeId)
-				nodeLabels[model.LabelName(ecLabelCacheNodeStatus)] = model.LabelValue(*cn.CacheNodeStatus)
-				nodeLabels[model.LabelName(ecLabelCustomerAZ)] = model.LabelValue(*cn.CustomerAvailabilityZone)
-				nodeLabels[model.LabelName(ecLabelEndpointAddress)] = model.LabelValue(*cn.Endpoint.Address)
-				nodeLabels[model.LabelName(ecLabelEndpointPort)] = model.LabelValue(strconv.Itoa(int(*cn.Endpoint.Port)))
+				setLabel(nodeLabels, ecLabelCacheNodeID, cn.CacheNodeId)
+				setLabel(nodeLabels, ecLabelCacheNodeStatus, cn.CacheNodeStatus)
+				setLabel(nodeLabels, ecLabelCustomerAZ, cn.CustomerAvailabilityZone)
+				if cn.Endpoint != nil {
+					setLabel(nodeLabels, ecLabelEndpointAddress, cn.Endpoint.Address)
+					if cn.Endpoint.Port != nil {
+						nodeLabels[model.LabelName(ecLabelEndpointPort)] = model.LabelValue(strconv.Itoa(int(*cn.Endpoint.Port)))
+					}
+				}
 
 				// Placeholder address
 				nodeLabels[model.AddressLabel] = model.LabelValue("undefined")
 
-				source := fmt.Sprintf("%s/%s", *cc.ARN, *cn.CacheNodeId)
+				source := fmt.Sprintf("%s/%s", identity, aws.ToString(cn.CacheNodeId))
 				d.logger.Debug("target added", "source", source)
 
 				current[source] = struct{}{}
