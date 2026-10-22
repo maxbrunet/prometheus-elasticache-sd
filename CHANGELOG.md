@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.220](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.219...v2.0.220) (2026-10-22)
+
+### Miscellaneous Chores
+
+* **deps:** update github/codeql-action action to v4.39.1 ([#1435](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1435)) ([dad5ecd](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/dad5ecdffa3d9d20390c065920a71c2cc94c04ec))
+* **renovate:** work around JSONata autoReplaceStringTemplate bug ([#1436](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1436)) ([18efc5a](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/18efc5a574c6b4489f088700f5a2ec5192195a23))
+
+### Build System
+
+* **deps:** update quay.io/prometheus/busybox:latest docker digest to 7379672 ([#1438](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1438)) ([145e1f7](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/145e1f72e7bcae75b73d52041a6461a6782c0568))
+
 ## [2.0.219](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.218...v2.0.219) (2026-10-20)
 
 ### Miscellaneous Chores
