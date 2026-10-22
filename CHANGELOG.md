@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.221](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.220...v2.0.221) (2026-10-22)
+
+### Build System
+
+* **deps:** update gcr.io/distroless/static-debian13:nonroot docker digest to d620678 ([#1437](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1437)) ([9a2fc37](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/9a2fc372907b63ee829ebf4846a1fe1d706ad0a9))
+
 ## [2.0.220](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.219...v2.0.220) (2026-10-22)
 
 ### Miscellaneous Chores
