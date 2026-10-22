@@ -1,3 +1,6 @@
+> ⚠️ **ARCHIVED**: Built-in AWS ElastiCache SD is available since Prometheus [v3.11.0](https://github.com/prometheus/prometheus/releases/v3.11.0).
+> Please see the [official documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#elasticache) for details
+
 # Prometheus AWS ElastiCache Service Discovery
 
 [![release](https://img.shields.io/github/v/release/maxbrunet/prometheus-elasticache-sd?sort=semver)](https://github.com/maxbrunet/prometheus-elasticache-sd/releases)

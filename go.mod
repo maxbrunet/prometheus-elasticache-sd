@@ -1,3 +1,4 @@
+// Deprecated: Built-in AWS ElastiCache SD is available since Prometheus v3.11.0. Please see https://prometheus.io/docs/prometheus/latest/configuration/configuration/#elasticache for details
 module github.com/maxbrunet/prometheus-elasticache-sd/v2
 
 go 1.26.0
