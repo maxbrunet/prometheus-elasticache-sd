@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.222](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.221...v2.0.222) (2026-10-22)
+
+### Bug Fixes
+
+* archive repository ([#1440](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1440)) ([b8ede3c](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/b8ede3cd48828eea8177cc9fd4059b33205d3f9d))
+
+### Tests
+
+* add tests and fix nil-safety on optional fields ([#1439](https://github.com/maxbrunet/prometheus-elasticache-sd/issues/1439)) ([840c230](https://github.com/maxbrunet/prometheus-elasticache-sd/commit/840c230f5b20241ee2562ca46c7cf51552f8c0a4))
+
 ## [2.0.221](https://github.com/maxbrunet/prometheus-elasticache-sd/compare/v2.0.220...v2.0.221) (2026-10-22)
 
 ### Build System
