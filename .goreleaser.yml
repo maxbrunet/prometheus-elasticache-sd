@@ -108,7 +108,7 @@ kos:
       - v2-busybox
       - v2
       - latest
-    base_image: quay.io/prometheus/busybox:latest@sha256:57ba692be36a8bb37322da87b164f7d2a655fdfec91ac85cc32cbdb3aa86d67a
+    base_image: quay.io/prometheus/busybox:latest@sha256:7379672d53c28113469275f2eb48adffa19954f39f8ef20c1e2992278f658e6c
     creation_time: '{{ .CommitTimestamp }}'
     ko_data_creation_time: '{{ .CommitTimestamp }}'
     labels: &labels-busybox
